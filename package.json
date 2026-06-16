@@ -1,0 +1,9 @@
+{
+  "name": "athletes-of-life",
+  "version": "1.0.0",
+  "description": "Athletes of Life — Hub + Audit + email workflows",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.20.0",
+    "resend": "^3.2.0"
+  }
+}

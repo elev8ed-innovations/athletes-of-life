@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Athletes of Life | Business Readiness Audit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0A0A;
+    --gold: #C9A84C;
+    --gold-light: #E2C272;
+    --gold-dim: rgba(201,168,76,0.15);
+    --white: #F5F5F0;
+    --gray: #888;
+    --gray-dark: #222;
+    --gray-mid: #333;
+    --red: #E03B3B;
+    --success: #3BBA6E;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    background: var(--gold);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 8px 0;
+  }
+  .ticker-track {
+    display: inline-block;
+    animation: ticker 28s linear infinite;
+  }
+  .ticker-track span {
+    color: #000;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    padding: 0 32px;
+  }
+  @keyframes ticker { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+
+  /* ── NAV ── */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #1a1a1a;
+  }
+  .logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: .12em;
+    color: var(--gold);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    text-align: center;
+    padding: 56px 24px 40px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 8vw, 64px);
+    letter-spacing: .04em;
+    line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+  .hero p {
+    font-size: 17px;
+    color: #aaa;
+    max-width: 480px;
+    margin: 0 auto 28px;
+  }
+
+  /* ── LOOM VIDEO ── */
+  .video-section {
+    max-width: 720px;
+    margin: 0 auto 40px;
+    padding: 0 24px;
+  }
+  .video-label {
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #2a2a2a;
+    background: #111;
+  }
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: 0;
+  }
+  .video-credit {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #555;
+  }
+
+  /* ── NIL PROOF CARDS ── */
+  .proof-cards {
+    display: flex;
+    gap: 12px;
+    max-width: 720px;
+    margin: 0 auto 48px;
+    padding: 0 24px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .proof-cards::-webkit-scrollbar { display: none; }
+  .proof-card {
+    flex: 0 0 200px;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .proof-card .sport { font-size: 22px; margin-bottom: 6px; }
+  .proof-card .athlete { font-size: 12px; color: #888; margin-bottom: 4px; }
+  .proof-card .track { font-size: 12px; color: var(--gold); margin-bottom: 10px; }
+  .proof-card .income {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: .04em;
+    color: var(--white);
+  }
+  .proof-card .income-label { font-size: 10px; color: #666; }
+
+  /* ── DEDICATED PATHS ── */
+  .paths-section {
+    max-width: 720px;
+    margin: 0 auto 56px;
+    padding: 0 24px;
+  }
+  .paths-title {
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .path-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 480px) { .path-cards { grid-template-columns: 1fr; } }
+  .path-card {
+    background: #0f0f0f;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: border-color .2s, background .2s;
+  }
+  .path-card:hover { border-color: var(--gold); background: #141414; }
+  .path-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: .06em;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .path-card p { font-size: 13px; color: #888; line-height: 1.5; }
+  .path-arrow {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: .08em;
+  }
+
+  /* ── WHO ARE YOU (Step 0) ── */
+  .who-section {
+    max-width: 560px;
+    margin: 0 auto 56px;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .who-section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: .06em;
+    margin-bottom: 24px;
+  }
+  .who-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .who-btn {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    padding: 16px 20px;
+    cursor: pointer;
+    text-align: left;
+    transition: border-color .2s, background .2s;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .who-btn:hover { border-color: var(--gold); background: #141414; }
+  .who-btn .who-icon { font-size: 22px; }
+  .who-btn .who-text strong {
+    display: block;
+    font-size: 15px;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+  .who-btn .who-text span { font-size: 12px; color: #777; }
+  .cta-main {
+    display: inline-block;
+    background: var(--gold);
+    color: #000;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: .04em;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 32px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background .2s;
+    width: 100%;
+    max-width: 360px;
+  }
+  .cta-main:hover { background: var(--gold-light); }
+
+  /* ── SCREENS ── */
+  .screen { display: none; }
+  .screen.active { display: block; }
+
+  .screen-inner {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  .step-label {
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .screen h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 6vw, 40px);
+    letter-spacing: .04em;
+    margin-bottom: 8px;
+    line-height: 1.1;
+  }
+  .screen-sub {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 32px;
+  }
+
+  /* ── FORM FIELDS ── */
+  .field { margin-bottom: 20px; }
+  .field label {
+    display: block;
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 8px;
+  }
+  .field input,
+  .field select {
+    width: 100%;
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 13px 16px;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border-color .2s;
+    -webkit-appearance: none;
+  }
+  .field input:focus,
+  .field select:focus { border-color: var(--gold); }
+  .field select option { background: #111; color: var(--white); }
+
+  /* ── SLIDERS (Step 2) ── */
+  .slider-group { margin-bottom: 28px; }
+  .slider-q {
+    font-size: 15px;
+    color: var(--white);
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  .slider-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .slider-label { font-size: 11px; color: #555; white-space: nowrap; }
+  input[type=range] {
+    flex: 1;
+    -webkit-appearance: none;
+    height: 4px;
+    background: #2a2a2a;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--gold);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform .15s;
+  }
+  input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.2); }
+  .slider-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--gold);
+    width: 24px;
+    text-align: center;
+  }
+
+  /* ── BUTTONS ── */
+  .btn-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+  }
+  .btn-back {
+    background: transparent;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 13px 20px;
+    color: #888;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color .2s, color .2s;
+  }
+  .btn-back:hover { border-color: #555; color: var(--white); }
+  .btn-next {
+    flex: 1;
+    background: var(--gold);
+    border: none;
+    border-radius: 8px;
+    padding: 14px 24px;
+    color: #000;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background .2s;
+    letter-spacing: .02em;
+  }
+  .btn-next:hover { background: var(--gold-light); }
+  .btn-next:disabled {
+    background: #333;
+    color: #666;
+    cursor: not-allowed;
+  }
+
+  /* ── PROGRESS BAR ── */
+  .progress-bar {
+    width: 100%;
+    height: 3px;
+    background: #1a1a1a;
+    border-radius: 2px;
+    margin-bottom: 32px;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--gold);
+    border-radius: 2px;
+    transition: width .4s ease;
+  }
+
+  /* ── LOADING ── */
+  #screen-loading {
+    text-align: center;
+    padding: 80px 24px;
+  }
+  .loading-ring {
+    width: 60px;
+    height: 60px;
+    border: 3px solid #222;
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 24px;
+  }
+  @keyframes spin { to { transform: rotate(360deg) } }
+  #screen-loading h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: .06em;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  #screen-loading p { font-size: 14px; color: #666; }
+  .loading-steps {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .loading-step {
+    font-size: 13px;
+    color: #444;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .4s, transform .4s;
+  }
+  .loading-step.visible { opacity: 1; transform: translateY(0); color: #888; }
+  .loading-step.done { color: var(--success); }
+
+  /* ── RESULTS ── */
+  #screen-results {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  .results-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px 24px;
+    background: linear-gradient(135deg, #111 0%, #0f0f0f 100%);
+    border: 1px solid #222;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .results-header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .results-badge {
+    display: inline-block;
+    background: var(--gold-dim);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .results-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 7vw, 48px);
+    letter-spacing: .04em;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .score-display {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+    margin: 20px 0;
+  }
+  .score-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .score-denom {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: #444;
+  }
+  .score-label {
+    font-size: 14px;
+    color: #777;
+    margin-top: 4px;
+  }
+
+  /* ── EMAIL SENT BANNER ── */
+  .email-sent-banner {
+    background: rgba(59,186,110,0.1);
+    border: 1px solid rgba(59,186,110,0.25);
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .email-sent-icon { font-size: 20px; }
+  .email-sent-text { font-size: 14px; color: #aaa; }
+  .email-sent-text strong { color: var(--success); display: block; font-size: 15px; margin-bottom: 2px; }
+
+  /* ── WELCOME VIDEO (results) ── */
+  .welcome-video-section {
+    margin-bottom: 40px;
+  }
+  .welcome-video-label {
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .welcome-video-placeholder {
+    background: #111;
+    border: 1px dashed #2a2a2a;
+    border-radius: 12px;
+    padding: 48px 24px;
+    text-align: center;
+  }
+  .welcome-video-placeholder .placeholder-icon { font-size: 36px; margin-bottom: 12px; }
+  .welcome-video-placeholder p {
+    font-size: 14px;
+    color: #555;
+    max-width: 320px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+  .welcome-video-placeholder p strong { color: #888; display: block; margin-bottom: 4px; }
+  /* When a real welcome video is added, uncomment this: */
+  /*
+  .welcome-video-embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #2a2a2a;
+  }
+  .welcome-video-embed iframe {
+    position: absolute; top:0; left:0; width:100%; height:100%; border:0;
+  }
+  */
+
+  /* ── AUDIT TEXT ── */
+  .audit-card {
+    background: #0f0f0f;
+    border: 1px solid #222;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 24px;
+  }
+  .audit-card-label {
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .audit-text {
+    font-size: 15px;
+    color: #ccc;
+    line-height: 1.75;
+  }
+  .audit-text p { margin-bottom: 14px; }
+  .audit-text p:last-child { margin-bottom: 0; }
+
+  /* ── DIMENSIONS ── */
+  .dimensions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 480px) { .dimensions-grid { grid-template-columns: 1fr; } }
+  .dim-card {
+    background: #0f0f0f;
+    border: 1px solid #1e1e1e;
+    border-radius: 12px;
+    padding: 16px;
+  }
+  .dim-name { font-size: 12px; color: #888; margin-bottom: 8px; letter-spacing: .04em; }
+  .dim-bar {
+    height: 4px;
+    background: #1a1a1a;
+    border-radius: 2px;
+    margin-bottom: 8px;
+    overflow: hidden;
+  }
+  .dim-fill {
+    height: 100%;
+    background: var(--gold);
+    border-radius: 2px;
+    transition: width .8s ease;
+  }
+  .dim-score {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: var(--white);
+  }
+  .dim-score span { font-size: 13px; color: #444; font-family: 'DM Sans', sans-serif; }
+
+  /* ── TRACK RECOMMENDATION ── */
+  .track-card {
+    background: linear-gradient(135deg, #141209 0%, #0f0f0f 100%);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 24px;
+  }
+  .track-card-label {
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .track-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: .04em;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .track-desc { font-size: 14px; color: #999; line-height: 1.6; }
+
+  /* ── TIERS ── */
+  .tiers-section { margin-bottom: 40px; }
+  .tiers-label {
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .tier-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .tier-card {
+    background: #0f0f0f;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .tier-card.highlighted {
+    border-color: var(--gold);
+    background: linear-gradient(135deg, #141209 0%, #0f0f0f 100%);
+  }
+  .tier-badge {
+    flex: 0 0 auto;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12px;
+    letter-spacing: .1em;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: #1a1a1a;
+    color: #888;
+    white-space: nowrap;
+  }
+  .tier-card.highlighted .tier-badge { background: var(--gold-dim); color: var(--gold); }
+  .tier-info .tier-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 3px;
+  }
+  .tier-info .tier-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .tier-info .tier-desc { font-size: 13px; color: #777; }
+
+  /* ── CTA SECTION ── */
+  .cta-section {
+    background: linear-gradient(135deg, #141209 0%, #0f0f0f 100%);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 16px;
+    padding: 32px 28px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .cta-section h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: .04em;
+    margin-bottom: 8px;
+  }
+  .cta-section p { font-size: 14px; color: #888; margin-bottom: 20px; }
+  .btn-cta {
+    display: inline-block;
+    background: var(--gold);
+    color: #000;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: .04em;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 36px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background .2s;
+    width: 100%;
+  }
+  .btn-cta:hover { background: var(--gold-light); }
+  .btn-cta-secondary {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: .04em;
+  }
+
+  /* ── PARENT / NIL SCREENS ── */
+  .subpath-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--gold-dim);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .result-sent {
+    text-align: center;
+    padding: 40px 24px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .result-sent-icon { font-size: 48px; margin-bottom: 16px; }
+  .result-sent h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: .06em;
+    margin-bottom: 8px;
+  }
+  .result-sent p { font-size: 15px; color: #888; margin-bottom: 24px; }
+  .result-email-show {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: var(--gold);
+    margin-bottom: 24px;
+    word-break: break-all;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid #1a1a1a;
+    padding: 24px;
+    text-align: center;
+    font-size: 12px;
+    color: #444;
+    letter-spacing: .04em;
+  }
+
+  /* ── UTILS ── */
+  .error-msg {
+    font-size: 12px;
+    color: var(--red);
+    margin-top: 6px;
+    display: none;
+  }
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track" id="tickerTrack">
+    <span>🏀 DII Guard — Content + Brand Deals — $2,400/mo</span>
+    <span>⚽ College Midfielder — Youth Coaching — $1,800/mo</span>
+    <span>🏈 Former D1 WR — AI Automation + NIL Pipeline — $6,500/mo</span>
+    <span>🎾 Pro Tennis — Digital Products — $3,200/mo</span>
+    <span>🏊 Olympic Hopeful — Coaching Track — $2,100/mo</span>
+    <span>🏐 NAIA Volleyball — E-commerce Store — $1,400/mo</span>
+    <span>🏀 DII Guard — Content + Brand Deals — $2,400/mo</span>
+    <span>⚽ College Midfielder — Youth Coaching — $1,800/mo</span>
+    <span>🏈 Former D1 WR — AI Automation + NIL Pipeline — $6,500/mo</span>
+    <span>🎾 Pro Tennis — Digital Products — $3,200/mo</span>
+    <span>🏊 Olympic Hopeful — Coaching Track — $2,100/mo</span>
+    <span>🏐 NAIA Volleyball — E-commerce Store — $1,400/mo</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo" onclick="go('home')" style="cursor:pointer;">Athletes of Life</div>
+</nav>
+
+<!-- ═══════════════════════════════════
+     SCREEN: HOME
+═══════════════════════════════════ -->
+<div id="screen-home" class="screen active">
+
+  <div class="hero">
+    <div class="hero-eyebrow">A message from Anthony</div>
+    <h1>Before You Take<br>The Audit</h1>
+    <p>90 seconds. Why I built this and what it can unlock for you.</p>
+  </div>
+
+  <div class="video-section">
+    <div class="video-label">Built by Anthony — 15 years of pro basketball around the world</div>
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.loom.com/embed/9ccfb1bc471645e48cb4eee2e18f83ae"
+        allowfullscreen
+        allow="autoplay; fullscreen">
+      </iframe>
+    </div>
+  </div>
+
+  <div class="who-section">
+    <h2>Who is building their future?</h2>
+    <button class="cta-main" onclick="go('step1')">Take the Free Audit →</button>
+
+    <div class="who-buttons">
+      <button class="who-btn" onclick="go('step1')">
+        <span class="who-icon">🎓</span>
+        <div class="who-text">
+          <strong>Student Athlete</strong>
+          <span>Currently competing in college, high school, or club sports</span>
+        </div>
+      </button>
+      <button class="who-btn" onclick="go('step1')">
+        <span class="who-icon">🏆</span>
+        <div class="who-text">
+          <strong>Pro Athlete Transitioning</strong>
+          <span>Professional career winding down, building what is next</span>
+        </div>
+      </button>
+      <button class="who-btn" onclick="go('step1')">
+        <span class="who-icon">🧭</span>
+        <div class="who-text">
+          <strong>Former Athlete</strong>
+          <span>Done competing, ready to monetize my athletic identity</span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <div class="proof-cards">
+    <div class="proof-card">
+      <div class="sport">🏀</div>
+      <div class="athlete">DII Guard, Midwest Conference</div>
+      <div class="track">Content Creation + Brand Deals</div>
+      <div class="income">$2,400<span style="font-size:14px;color:#555">/mo</span></div>
+      <div class="income-label">Monthly recurring</div>
+    </div>
+    <div class="proof-card">
+      <div class="sport">⚽</div>
+      <div class="athlete">College Midfielder, NAIA</div>
+      <div class="track">Coaching Track — Youth Training</div>
+      <div class="income">$1,800<span style="font-size:14px;color:#555">/mo</span></div>
+      <div class="income-label">Monthly recurring</div>
+    </div>
+    <div class="proof-card">
+      <div class="sport">🏈</div>
+      <div class="athlete">Former D1 Wide Receiver</div>
+      <div class="track">Platinum Execution</div>
+      <div class="income">$6,500<span style="font-size:14px;color:#555">/mo</span></div>
+      <div class="income-label">Monthly recurring</div>
+    </div>
+  </div>
+
+  <div class="paths-section">
+    <div class="paths-title">Dedicated paths</div>
+    <div class="path-cards">
+      <div class="path-card" onclick="go('parent')">
+        <h3>Sports Parent</h3>
+        <p>Is My Athlete Ready for NIL? 6 questions. Personalized fit report sent to your inbox.</p>
+        <span class="path-arrow">→ Free assessment</span>
+      </div>
+      <div class="path-card" onclick="go('nil')">
+        <h3>NIL Athlete · Done For You</h3>
+        <p>We build it. You play. AI-powered brand + income system set up around your sport.</p>
+        <span class="path-arrow">→ Apply now</span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /screen-home -->
+
+
+<!-- ═══════════════════════════════════
+     SCREEN: STEP 1 — Who are you
+═══════════════════════════════════ -->
+<div id="screen-step1" class="screen">
+  <div class="screen-inner">
+    <div class="progress-bar"><div class="progress-fill" style="width:25%"></div></div>
+    <div class="step-label">Step 1 of 4</div>
+    <h2>Tell me about your game.</h2>
+    <p class="screen-sub">Three quick fields to sharpen your audit.</p>
+
+    <div class="field">
+      <label>Your Name</label>
+      <input type="text" id="f-name" placeholder="First name">
+    </div>
+    <div class="field">
+      <label>Your Sport</label>
+      <input type="text" id="f-sport" placeholder="Basketball, Soccer, Football...">
+    </div>
+    <div class="field">
+      <label>Current Income from Athletics</label>
+      <select id="f-income">
+        <option value="">Select one...</option>
+        <option value="none">None yet</option>
+        <option value="scholarship">Scholarship only</option>
+        <option value="nil-small">Some NIL (under $5k/yr)</option>
+        <option value="nil-active">Active NIL ($5k to $50k/yr)</option>
+        <option value="pro">Pro contract / salary</option>
+        <option value="post">Post-sport, rebuilding income</option>
+      </select>
+    </div>
+    <p class="error-msg" id="err-step1">Please fill out all fields.</p>
+
+    <div class="btn-row">
+      <button class="btn-back" onclick="go('home')">← Back</button>
+      <button class="btn-next" onclick="nextStep1()">Continue →</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     SCREEN: STEP 2 — Score yourself
+═══════════════════════════════════ -->
+<div id="screen-step2" class="screen">
+  <div class="screen-inner">
+    <div class="progress-bar"><div class="progress-fill" style="width:50%"></div></div>
+    <div class="step-label">Step 2 of 4</div>
+    <h2>Score yourself honestly.</h2>
+    <p class="screen-sub">Five dimensions. Left is not me — right is absolutely me.</p>
+
+    <div class="slider-group">
+      <div class="slider-q">I am comfortable on camera and sharing my story publicly.</div>
+      <div class="slider-row">
+        <span class="slider-label">Not me</span>
+        <input type="range" id="s1" min="1" max="10" value="5" oninput="document.getElementById('v1').textContent=this.value">
+        <span class="slider-label">Absolutely me</span>
+        <span class="slider-val" id="v1">5</span>
+      </div>
+    </div>
+
+    <div class="slider-group">
+      <div class="slider-q">I enjoy teaching, coaching, or helping others improve.</div>
+      <div class="slider-row">
+        <span class="slider-label">Not me</span>
+        <input type="range" id="s2" min="1" max="10" value="5" oninput="document.getElementById('v2').textContent=this.value">
+        <span class="slider-label">Absolutely me</span>
+        <span class="slider-val" id="v2">5</span>
+      </div>
+    </div>
+
+    <div class="slider-group">
+      <div class="slider-q">I have 10+ hours per week available to build something outside my sport.</div>
+      <div class="slider-row">
+        <span class="slider-label">Not me</span>
+        <input type="range" id="s3" min="1" max="10" value="5" oninput="document.getElementById('v3').textContent=this.value">
+        <span class="slider-label">Absolutely me</span>
+        <span class="slider-val" id="v3">5</span>
+      </div>
+    </div>
+
+    <div class="slider-group">
+      <div class="slider-q">I understand money, investing, or want passive income streams.</div>
+      <div class="slider-row">
+        <span class="slider-label">Not me</span>
+        <input type="range" id="s4" min="1" max="10" value="5" oninput="document.getElementById('v4').textContent=this.value">
+        <span class="slider-label">Absolutely me</span>
+        <span class="slider-val" id="v4">5</span>
+      </div>
+    </div>
+
+    <div class="slider-group">
+      <div class="slider-q">I already have a social following or a network I can activate.</div>
+      <div class="slider-row">
+        <span class="slider-label">Not me</span>
+        <input type="range" id="s5" min="1" max="10" value="5" oninput="document.getElementById('v5').textContent=this.value">
+        <span class="slider-label">Absolutely me</span>
+        <span class="slider-val" id="v5">5</span>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-back" onclick="go('step1')">← Back</button>
+      <button class="btn-next" onclick="go('step3')">Continue →</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     SCREEN: STEP 3 — Email
+═══════════════════════════════════ -->
+<div id="screen-step3" class="screen">
+  <div class="screen-inner">
+    <div class="progress-bar"><div class="progress-fill" style="width:75%"></div></div>
+    <div class="step-label">Step 3 of 4</div>
+    <h2>Where do we send your audit?</h2>
+    <p class="screen-sub">Your score, best track, and three concrete moves — in your inbox in minutes.</p>
+
+    <div class="field">
+      <label>Email Address</label>
+      <input type="email" id="f-email" placeholder="your@email.com">
+      <p style="font-size:12px;color:#555;margin-top:6px;">No spam. Used to generate and send your audit only.</p>
+    </div>
+    <p class="error-msg" id="err-step3">Please enter a valid email address.</p>
+    <p class="error-msg" id="err-api" style="color:#E03B3B">Something went wrong. Please try again.</p>
+
+    <div class="btn-row">
+      <button class="btn-back" onclick="go('step2')">← Back</button>
+      <button class="btn-next" id="btn-submit" onclick="submitAudit()">Build my audit →</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     SCREEN: LOADING
+═══════════════════════════════════ -->
+<div id="screen-loading" class="screen">
+  <div class="loading-ring"></div>
+  <h2>Building Your Audit</h2>
+  <p>Analyzing your profile and readiness score...</p>
+  <div class="loading-steps">
+    <div class="loading-step" id="ls1">⚡ Scoring your five dimensions</div>
+    <div class="loading-step" id="ls2">🎯 Matching you to your best business track</div>
+    <div class="loading-step" id="ls3">🧠 Generating your personalized audit</div>
+    <div class="loading-step" id="ls4">📧 Sending your report</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     SCREEN: RESULTS
+═══════════════════════════════════ -->
+<div id="screen-results" class="screen">
+
+  <!-- Header / Score -->
+  <div class="results-header">
+    <div class="results-badge" id="res-tier-badge">YOUR RESULTS</div>
+    <div class="results-name" id="res-name">Athlete</div>
+    <div style="font-size:14px;color:#777;margin-bottom:4px;" id="res-sport-income"></div>
+    <div class="score-display">
+      <div class="score-num" id="res-score">0</div>
+      <div class="score-denom">/ 50</div>
+    </div>
+    <div class="score-label" id="res-readiness-label">Business Readiness Score</div>
+  </div>
+
+  <!-- Email Sent Banner -->
+  <div class="email-sent-banner">
+    <div class="email-sent-icon">✅</div>
+    <div class="email-sent-text">
+      <strong>Full audit sent to your inbox</strong>
+      <span id="res-email-show">Check your email for your detailed report and next steps.</span>
+    </div>
+  </div>
+
+  <!-- Welcome Video (placeholder — swap iframe in when video is ready) -->
+  <div class="welcome-video-section">
+    <div class="welcome-video-label">A personal message for you</div>
+    <div class="welcome-video-embed" style="position:relative;padding-bottom:56.25%;border-radius:12px;overflow:hidden;border:1px solid #2a2a2a;">
+      <iframe
+        src="https://www.loom.com/embed/0dfd3c90d188413abe9851afba607c5a?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <!-- AI Audit Text -->
+  <div class="audit-card">
+    <div class="audit-card-label">Your Personalized Audit</div>
+    <div class="audit-text" id="res-audit-text">
+      <p>Generating your audit...</p>
+    </div>
+  </div>
+
+  <!-- Dimension Scores -->
+  <div class="dimensions-grid" id="res-dimensions">
+    <!-- Filled by JS -->
+  </div>
+
+  <!-- Track Recommendation -->
+  <div class="track-card">
+    <div class="track-card-label">Your Recommended Track</div>
+    <div class="track-name" id="res-track">—</div>
+    <div class="track-desc" id="res-track-desc">—</div>
+  </div>
+
+  <!-- Three Tiers -->
+  <div class="tiers-section">
+    <div class="tiers-label">Your three-tier path</div>
+    <div class="tier-cards">
+      <div class="tier-card">
+        <div class="tier-badge">TIER 1</div>
+        <div class="tier-info">
+          <div class="tier-name">Foundation</div>
+          <div class="tier-price">Free</div>
+          <div class="tier-desc">Skool community, core frameworks, weekly Q&A with Anthony's network. Start here.</div>
+        </div>
+      </div>
+      <div class="tier-card highlighted">
+        <div class="tier-badge">TIER 2 · RECOMMENDED</div>
+        <div class="tier-info">
+          <div class="tier-name">Pro Playbook</div>
+          <div class="tier-price">$97/mo</div>
+          <div class="tier-desc">Live Zoom sessions, expert network access, accountability system, track-specific playbook.</div>
+        </div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-badge">TIER 3</div>
+        <div class="tier-info">
+          <div class="tier-name">Platinum Execution</div>
+          <div class="tier-price">$5,000+</div>
+          <div class="tier-desc">Done-for-you AI automation, NIL pipeline, 1-on-1 with Anthony. We build it while you play.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h3>Ready to Run Your Playbook?</h3>
+    <p>Start with the Foundation — it is free. Or jump straight into Pro Playbook and put your audit into action this week.</p>
+    <a href="https://calendly.com/admin-peptbiohacking/athletes-of-life-strategy-call" target="_blank" class="btn-cta">Book a Free Strategy Call with Anthony</a>
+    <a href="https://calendly.com/admin-peptbiohacking/athletes-of-life-strategy-call" target="_blank" class="btn-cta-secondary">Or start with Foundation (free) →</a>
+  </div>
+
+</div><!-- /screen-results -->
+
+
+<!-- ═══════════════════════════════════
+     SCREEN: SPORTS PARENT PATH
+═══════════════════════════════════ -->
+<div id="screen-parent" class="screen">
+  <div class="screen-inner">
+    <div class="subpath-badge">👪 Sports Parent Path</div>
+    <h2>Tell us about your athlete.</h2>
+    <p class="screen-sub">Six questions. We send you a personalized fit report in minutes.</p>
+
+    <div class="field">
+      <label>Your Name</label>
+      <input type="text" id="p-name" placeholder="First name">
+    </div>
+    <div class="field">
+      <label>Your Email</label>
+      <input type="email" id="p-email" placeholder="your@email.com">
+    </div>
+    <div class="field">
+      <label>Your Athlete's Sport and Level</label>
+      <input type="text" id="p-sport" placeholder="e.g. High school basketball, NAIA soccer">
+    </div>
+    <div class="field">
+      <label>Your Athlete's Age Range</label>
+      <select id="p-age">
+        <option value="">Select one...</option>
+        <option value="under14">Under 14</option>
+        <option value="hs">14 to 17 — high school years</option>
+        <option value="college">18 to 22 — college years</option>
+        <option value="pro">Over 22 — early professional stage</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>What matters most to you right now?</label>
+      <select id="p-goal">
+        <option value="">Select one...</option>
+        <option value="nil-now">Starting NIL deals while they are still competing</option>
+        <option value="career">Building a career plan for after sport</option>
+        <option value="both">Both — NIL now and long-term income</option>
+        <option value="literacy">Teaching financial literacy and business basics</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Your athlete's current social media presence</label>
+      <select id="p-social">
+        <option value="">Select one...</option>
+        <option value="tiny">None or very small (under 500 followers)</option>
+        <option value="small">Small but growing (500 to 5k)</option>
+        <option value="solid">Solid presence (5k to 25k)</option>
+        <option value="strong">Strong following (25k+)</option>
+      </select>
+    </div>
+    <p class="error-msg" id="err-parent">Please fill out all fields.</p>
+
+    <div class="btn-row">
+      <button class="btn-back" onclick="go('home')">← Back</button>
+      <button class="btn-next" onclick="submitParent()">Send my fit report →</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     SCREEN: NIL DONE FOR YOU
+═══════════════════════════════════ -->
+<div id="screen-nil" class="screen">
+  <div class="screen-inner">
+    <div class="subpath-badge">🚀 NIL Athlete · Done For You</div>
+    <h2>We build it. You play.</h2>
+    <p class="screen-sub">Tell us your situation. Anthony reviews every application and sends a strategy breakdown within 48 hours.</p>
+
+    <div class="field">
+      <label>Your Name</label>
+      <input type="text" id="n-name" placeholder="First name">
+    </div>
+    <div class="field">
+      <label>Your Email</label>
+      <input type="email" id="n-email" placeholder="your@email.com">
+    </div>
+    <div class="field">
+      <label>Sport and Level</label>
+      <input type="text" id="n-sport" placeholder="e.g. D1 Basketball, Pro Soccer">
+    </div>
+    <div class="field">
+      <label>Current NIL or income situation</label>
+      <select id="n-income">
+        <option value="">Select one...</option>
+        <option value="zero">No NIL or income yet — starting from zero</option>
+        <option value="some">Some deals but inconsistent</option>
+        <option value="active">Active NIL, want to scale it</option>
+        <option value="pro">Pro salary — building for after sport</option>
+        <option value="post">Post-sport, need to replace income now</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Biggest bottleneck right now</label>
+      <select id="n-block">
+        <option value="">Select one...</option>
+        <option value="time">No time — sport takes everything</option>
+        <option value="idea">Do not know what to sell or where to start</option>
+        <option value="content">Have ideas but no system to execute content</option>
+        <option value="pipeline">Need a deal or income pipeline built</option>
+        <option value="tech">Not technical enough to set it up myself</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>What does your ideal outcome look like?</label>
+      <select id="n-outcome">
+        <option value="">Select one...</option>
+        <option value="income">Consistent monthly income from my brand (NIL deals, content)</option>
+        <option value="business">A real business that runs while I compete</option>
+        <option value="foundation">A foundation that pays off after I retire</option>
+        <option value="all">All of the above — I want the full system</option>
+      </select>
+    </div>
+    <p class="error-msg" id="err-nil">Please fill out all fields.</p>
+
+    <div class="btn-row">
+      <button class="btn-back" onclick="go('home')">← Back</button>
+      <button class="btn-next" onclick="submitNil()">Send my strategy →</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     SCREEN: PARENT RESULT
+═══════════════════════════════════ -->
+<div id="screen-parent-result" class="screen">
+  <div class="result-sent">
+    <div class="result-sent-icon">📬</div>
+    <h2>Your Fit Report Is On Its Way</h2>
+    <p>We analyzed your athlete's situation and sent a personalized report to:</p>
+    <div class="result-email-show" id="parent-email-show">—</div>
+    <p style="margin-bottom:32px;font-size:14px;color:#666;">Check your inbox (and spam folder if needed). Anthony reviews every report personally.</p>
+    <a href="https://calendly.com/admin-peptbiohacking/athletes-of-life-strategy-call" target="_blank" class="btn-cta">Talk to Anthony — Free 20 Min</a>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     SCREEN: NIL RESULT
+═══════════════════════════════════ -->
+<div id="screen-nil-result" class="screen">
+  <div class="result-sent">
+    <div class="result-sent-icon">🚀</div>
+    <h2>Your Strategy Is Being Built</h2>
+    <p>Anthony personally reviews every application. Your strategy breakdown goes to:</p>
+    <div class="result-email-show" id="nil-email-show">—</div>
+    <p style="margin-bottom:32px;font-size:14px;color:#666;">Expect a response within 48 hours. In the meantime, book a call to accelerate.</p>
+    <a href="https://calendly.com/admin-peptbiohacking/athletes-of-life-strategy-call" target="_blank" class="btn-cta">Book Your Strategy Call with Anthony</a>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer>Athletes of Life · Elev8ed Innovation LLC · Built by Anthony</footer>
+
+
+<script>
+// ═══════════════════════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════════════════════
+const state = {
+  name: '',
+  sport: '',
+  income: '',
+  email: '',
+  scores: [5, 5, 5, 5, 5]
+};
+
+const dimensionNames = [
+  'On-Camera Presence',
+  'Teaching / Coaching',
+  'Available Time',
+  'Money & Investing',
+  'Network / Audience'
+];
+
+const trackMap = {
+  'Content Creation': 'You have the story and the presence — this track turns that into recurring brand income. Content engine, brand deals, and an audience that pays.',
+  'Coaching / Consulting': 'You naturally elevate the people around you. This track builds your coaching offer, client pipeline, and recurring income from your expertise.',
+  'E-commerce / Digital Products': 'Your knowledge is worth packaging. This track builds passive income through digital products, courses, and offers that sell while you sleep.',
+  'Service Business': 'You execute. This track turns your skills into a premium service business — real clients, real contracts, real monthly income.',
+  'Investment / Passive Income': 'You think long-term. This track builds wealth vehicles — real estate, equity, and income streams that compound over time.'
+};
+
+// ═══════════════════════════════════════════════════════
+//  NAVIGATION
+// ═══════════════════════════════════════════════════════
+function go(screenName) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  const el = document.getElementById('screen-' + screenName);
+  if (el) {
+    el.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+//  STEP 1 VALIDATION
+// ═══════════════════════════════════════════════════════
+function nextStep1() {
+  const name = document.getElementById('f-name').value.trim();
+  const sport = document.getElementById('f-sport').value.trim();
+  const income = document.getElementById('f-income').value;
+
+  if (!name || !sport || !income) {
+    document.getElementById('err-step1').style.display = 'block';
+    return;
+  }
+  document.getElementById('err-step1').style.display = 'none';
+  state.name = name;
+  state.sport = sport;
+  state.income = income;
+  go('step2');
+}
+
+// ═══════════════════════════════════════════════════════
+//  SUBMIT MAIN AUDIT
+// ═══════════════════════════════════════════════════════
+function submitAudit() {
+  const email = document.getElementById('f-email').value.trim();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailRegex.test(email)) {
+    document.getElementById('err-step3').style.display = 'block';
+    return;
+  }
+  document.getElementById('err-step3').style.display = 'none';
+  document.getElementById('err-api').style.display = 'none';
+
+  state.email = email;
+  state.scores = [
+    parseInt(document.getElementById('s1').value),
+    parseInt(document.getElementById('s2').value),
+    parseInt(document.getElementById('s3').value),
+    parseInt(document.getElementById('s4').value),
+    parseInt(document.getElementById('s5').value)
+  ];
+
+  go('loading');
+  runLoadingAnimation();
+
+  const totalScore = state.scores.reduce((a, b) => a + b, 0);
+  const bestTrack = getBestTrack(state.scores);
+
+  const payload = {
+    name: state.name,
+    sport: state.sport,
+    income: state.income,
+    email: state.email,
+    scores: state.scores,
+    totalScore: totalScore,
+    bestTrack: bestTrack
+  };
+
+  fetch('/.netlify/functions/send-audit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(function(res) {
+    return res.json();
+  })
+  .then(function(data) {
+    showResults(data, payload);
+  })
+  .catch(function(err) {
+    console.error('Audit error:', err);
+    // Show results anyway with fallback audit text
+    showResults({ audit: generateFallbackAudit(payload) }, payload);
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+//  LOADING ANIMATION
+// ═══════════════════════════════════════════════════════
+function runLoadingAnimation() {
+  const steps = ['ls1', 'ls2', 'ls3', 'ls4'];
+  steps.forEach(function(id, i) {
+    setTimeout(function() {
+      document.getElementById(id).classList.add('visible');
+    }, i * 1200);
+    if (i < steps.length - 1) {
+      setTimeout(function() {
+        document.getElementById(id).classList.add('done');
+      }, (i + 1) * 1200 - 100);
+    }
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+//  TRACK ROUTING LOGIC
+// ═══════════════════════════════════════════════════════
+function getBestTrack(scores) {
+  // scores[0]=camera, [1]=coaching, [2]=time, [3]=money, [4]=network
+  const camera = scores[0];
+  const coaching = scores[1];
+  const time = scores[2];
+  const money = scores[3];
+  const network = scores[4];
+
+  if (camera >= 7 && network >= 6) return 'Content Creation';
+  if (coaching >= 7) return 'Coaching / Consulting';
+  if (money >= 7) return 'Investment / Passive Income';
+  if (time >= 7) return 'Service Business';
+
+  const totals = {
+    'Content Creation': camera * 2 + network * 1.5,
+    'Coaching / Consulting': coaching * 2 + time,
+    'E-commerce / Digital Products': time * 1.5 + money,
+    'Service Business': time * 2 + coaching,
+    'Investment / Passive Income': money * 2 + time
+  };
+
+  return Object.keys(totals).reduce(function(a, b) {
+    return totals[a] > totals[b] ? a : b;
+  });
+}
+
+function getReadinessLabel(score) {
+  if (score >= 42) return 'Elite Readiness';
+  if (score >= 34) return 'High Readiness';
+  if (score >= 25) return 'Strong Foundation';
+  if (score >= 15) return 'Building Momentum';
+  return 'Starting Strong';
+}
+
+// ═══════════════════════════════════════════════════════
+//  SHOW RESULTS
+// ═══════════════════════════════════════════════════════
+function showResults(data, payload) {
+  const total = payload.totalScore;
+  const track = payload.bestTrack;
+  const readiness = getReadinessLabel(total);
+
+  document.getElementById('res-tier-badge').textContent = readiness.toUpperCase();
+  document.getElementById('res-name').textContent = payload.name;
+  document.getElementById('res-sport-income').textContent = payload.sport + ' · ' + formatIncome(payload.income);
+  document.getElementById('res-score').textContent = total;
+  document.getElementById('res-readiness-label').textContent = readiness;
+  document.getElementById('res-email-show').textContent = 'Full report sent to ' + payload.email;
+  document.getElementById('res-track').textContent = track;
+  document.getElementById('res-track-desc').textContent = trackMap[track] || '';
+
+  // Audit text
+  var auditContent = (data && data.audit) ? data.audit : generateFallbackAudit(payload);
+  var auditParagraphs = auditContent.split('\n\n').filter(function(p) { return p.trim().length > 0; });
+  var auditHTML = auditParagraphs.map(function(p) {
+    return '<p>' + p.trim() + '</p>';
+  }).join('');
+  document.getElementById('res-audit-text').innerHTML = auditHTML || '<p>' + auditContent + '</p>';
+
+  // Dimensions
+  var dimGrid = document.getElementById('res-dimensions');
+  dimGrid.innerHTML = '';
+  payload.scores.forEach(function(score, i) {
+    var pct = (score / 10) * 100;
+    dimGrid.innerHTML += '<div class="dim-card">' +
+      '<div class="dim-name">' + dimensionNames[i] + '</div>' +
+      '<div class="dim-bar"><div class="dim-fill" style="width:' + pct + '%"></div></div>' +
+      '<div class="dim-score">' + score + '<span> / 10</span></div>' +
+      '</div>';
+  });
+
+  go('results');
+}
+
+// ═══════════════════════════════════════════════════════
+//  FALLBACK AUDIT (if API fails)
+// ═══════════════════════════════════════════════════════
+function getSportVenue(sport) {
+  var s = (sport || '').toLowerCase();
+  if (s.indexOf('football') !== -1) return 'field';
+  if (s.indexOf('baseball') !== -1 || s.indexOf('softball') !== -1) return 'diamond';
+  if (s.indexOf('soccer') !== -1) return 'pitch';
+  if (s.indexOf('hockey') !== -1) return 'rink';
+  if (s.indexOf('swim') !== -1) return 'pool';
+  if (s.indexOf('track') !== -1) return 'track';
+  if (s.indexOf('golf') !== -1) return 'course';
+  if (s.indexOf('tennis') !== -1) return 'court';
+  if (s.indexOf('volleyball') !== -1) return 'court';
+  if (s.indexOf('gymnastics') !== -1 || s.indexOf('wrestling') !== -1) return 'mat';
+  return 'court';
+}
+
+function generateFallbackAudit(p) {
+  var total = p.totalScore;
+  var track = p.bestTrack;
+  var label = getReadinessLabel(total);
+
+  return p.name + ', here is your honest read.\n\n' +
+    'You scored ' + total + ' out of 50 — that puts you at ' + label + '. The discipline you built in ' + p.sport + ' already gives you an edge most people are still trying to develop. The question is not whether you can build income off the ' + getSportVenue(p.sport) + '. The question is which path puts your strengths to work fastest.\n\n' +
+    'Your scores point clearly to the ' + track + ' track. That is where your profile is strongest and where the path of least resistance sits. This is not a consolation prize — it is the track where athletes with your exact combination of scores tend to build fastest and stick with longest.\n\n' +
+    'Three concrete moves: First, commit to the track — stop researching and start executing. Second, block two hours this week to complete the first module. Third, post once publicly about your athletic identity. One post. That is it. The audit we sent to your inbox has the full breakdown with specific next steps for the ' + track + ' path.';
+}
+
+function formatIncome(val) {
+  var map = {
+    none: 'No income yet',
+    scholarship: 'Scholarship',
+    'nil-small': 'Some NIL',
+    'nil-active': 'Active NIL',
+    pro: 'Pro contract',
+    post: 'Post-sport'
+  };
+  return map[val] || val;
+}
+
+// ═══════════════════════════════════════════════════════
+//  SPORTS PARENT SUBMIT
+// ═══════════════════════════════════════════════════════
+function submitParent() {
+  var name = document.getElementById('p-name').value.trim();
+  var email = document.getElementById('p-email').value.trim();
+  var sport = document.getElementById('p-sport').value.trim();
+  var age = document.getElementById('p-age').value;
+  var goal = document.getElementById('p-goal').value;
+  var social = document.getElementById('p-social').value;
+
+  if (!name || !email || !sport || !age || !goal || !social) {
+    document.getElementById('err-parent').style.display = 'block';
+    return;
+  }
+  document.getElementById('err-parent').style.display = 'none';
+  document.getElementById('parent-email-show').textContent = email;
+
+  // Fire and forget to function
+  fetch('/.netlify/functions/send-audit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      type: 'parent',
+      name: name, email: email, sport: sport,
+      age: age, goal: goal, social: social,
+      notifyEmail: 'a.lever@me.com'
+    })
+  }).catch(function() {});
+
+  go('parent-result');
+}
+
+// ═══════════════════════════════════════════════════════
+//  NIL DONE FOR YOU SUBMIT
+// ═══════════════════════════════════════════════════════
+function submitNil() {
+  var name = document.getElementById('n-name').value.trim();
+  var email = document.getElementById('n-email').value.trim();
+  var sport = document.getElementById('n-sport').value.trim();
+  var income = document.getElementById('n-income').value;
+  var block = document.getElementById('n-block').value;
+  var outcome = document.getElementById('n-outcome').value;
+
+  if (!name || !email || !sport || !income || !block || !outcome) {
+    document.getElementById('err-nil').style.display = 'block';
+    return;
+  }
+  document.getElementById('err-nil').style.display = 'none';
+  document.getElementById('nil-email-show').textContent = email;
+
+  fetch('/.netlify/functions/send-audit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      type: 'nil',
+      name: name, email: email, sport: sport,
+      income: income, block: block, outcome: outcome,
+      notifyEmail: 'a.lever@me.com'
+    })
+  }).catch(function() {});
+
+  go('nil-result');
+}
+</script>
+
+</body>
+</html>

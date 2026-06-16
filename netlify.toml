@@ -1,0 +1,12 @@
+[build]
+  publish = "."
+  command = ""
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+  external_node_modules = ["@anthropic-ai/sdk", "resend"]
+  directory = "netlify/functions"
+
+[functions."send-audit"]
+  timeout = 26
