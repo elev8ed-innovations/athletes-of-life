@@ -1,0 +1,70 @@
+name: AOL CI — Code Review + Secrets Scan + Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # ─── JOB 1: Scan for hardcoded secrets ───────────────
+  secrets-scan:
+    name: Secrets Scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Scan for hardcoded secrets
+        uses: trufflesecurity/trufflehog@main
+        with:
+          extra_args: --results=verified,unknown --fail
+
+  # ─── JOB 2: AI Code Review (on PRs only) ─────────────
+  ai-review:
+    name: AI Code Review
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: AI Review via Claude
+        uses: coderabbitai/openai-pr-reviewer@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Uses OpenAI by default — swap to Claude or keep as-is
+          # To use Claude: add ANTHROPIC_API_KEY to repo secrets
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        with:
+          debug: false
+          review_simple_changes: false
+          review_comment_lgtm: false
+          system_message: |
+            You are reviewing an Athletes of Life website codebase.
+            Look for: security issues, hardcoded secrets, broken links,
+            HTML/JS errors, and logic bugs. The human always makes the
+            final call — flag issues, don't block.
+
+  # ─── JOB 3: Deploy to Netlify (on main push only) ────
+  deploy:
+    name: Deploy to Netlify
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [secrets-scan]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3
+        with:
+          publish-dir: .
+          production-deploy: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions — ${{ github.sha }}"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
