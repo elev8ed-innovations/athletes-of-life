@@ -88,9 +88,10 @@ exports.handler = async function(event) {
 
   let auditText = '';
   try {
-    const completion = await anthropic.messages.create({ model: 'claude-sonnet-4-20250514', max_tokens: 600, messages: [{ role: 'user', content: prompt }] });
+    const completion = await anthropic.messages.create({ model: 'claude-sonnet-5', max_tokens: 600, messages: [{ role: 'user', content: prompt }] });
     auditText = completion.content[0].text.replace(/\*\*(.*?)\*\*/g, '$1').replace(/\*(.*?)\*/g, '$1');
   } catch(e) {
+    console.error('Anthropic audit generation failed:', e && e.status, e && e.message);
     auditText = name + ', here is your honest read.\n\nYou scored ' + totalScore + ' out of 50. The discipline you built in ' + sport + ' already gives you an edge. Your scores point to the ' + bestTrack + ' track.\n\nThree moves this week: commit to the track, block two hours for the first module, post once about your athletic identity.';
   }
 
