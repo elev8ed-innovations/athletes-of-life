@@ -1,4 +1,4 @@
-name: AOL CI — Code Review + Secrets Scan + Deploy
+name: Athletes of Life CI
 
 on:
   push:
@@ -6,65 +6,51 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: athletes-of-life-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  # ─── JOB 1: Scan for hardcoded secrets ───────────────
-  secrets-scan:
-    name: Secrets Scan
+  validate:
+    name: Validate site and functions
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Check required site files
+        run: |
+          test -f index.html
+          test -f audit/index.html
+          test -f netlify.toml
+
+      - name: Check Netlify function syntax
+        run: |
+          node --check netlify/functions/send-audit.js
+          node --check netlify/functions/send-contact.js
+
+  secrets-scan:
+    name: Scan for exposed secrets
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out full history
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           fetch-depth: 0
 
-      - name: Scan for hardcoded secrets
-        uses: trufflesecurity/trufflehog@main
+      - name: Scan repository history
+        uses: trufflesecurity/trufflehog@8708801319700a16c56abb86628803ba766d5563
         with:
           extra_args: --results=verified,unknown --fail
-
-  # ─── JOB 2: AI Code Review (on PRs only) ─────────────
-  ai-review:
-    name: AI Code Review
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: AI Review via Claude
-        uses: coderabbitai/openai-pr-reviewer@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Uses OpenAI by default — swap to Claude or keep as-is
-          # To use Claude: add ANTHROPIC_API_KEY to repo secrets
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        with:
-          debug: false
-          review_simple_changes: false
-          review_comment_lgtm: false
-          system_message: |
-            You are reviewing an Athletes of Life website codebase.
-            Look for: security issues, hardcoded secrets, broken links,
-            HTML/JS errors, and logic bugs. The human always makes the
-            final call — flag issues, don't block.
-
-  # ─── JOB 3: Deploy to Netlify (on main push only) ────
-  deploy:
-    name: Deploy to Netlify
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: [secrets-scan]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v3
-        with:
-          publish-dir: .
-          production-deploy: true
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy from GitHub Actions — ${{ github.sha }}"
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
