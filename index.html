@@ -615,7 +615,7 @@ footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;j
         <li id="pf5"><span class="chk">✦</span><span data-en="Core Business Frameworks" data-es="Marcos de Negocio Fundamentales">Core Business Frameworks</span></li>
         <li id="pf6"><span class="chk">✦</span><span data-en="Community Access" data-es="Acceso a la Comunidad">Community Access</span></li>
       </ul>
-      <div class="price-cta"><button class="btn-p btn-p-outline" onclick="window.open('/audit/','_blank')" data-en="Start Free →" data-es="Empieza Gratis →">Start Free →</button></div>
+      <div class="price-cta"><button class="btn-p btn-p-outline" onclick="openAudit('_blank')" data-en="Start Free →" data-es="Empieza Gratis →">Start Free →</button></div>
     </div>
     <div class="price-card featured">
       <div class="feat-label">MOST POPULAR</div>
@@ -769,8 +769,24 @@ function handleSubmit(e){
 
 <script>
 var currentLang = 'en';
+function auditUrl() {
+  return '/audit/?lang=' + currentLang;
+}
+
+function updateAuditLinks() {
+  document.querySelectorAll('a[href^="/audit/"]').forEach(function(link) {
+    link.href = auditUrl();
+  });
+}
+
+function openAudit(target) {
+  window.open(auditUrl(), target || '_self');
+}
+
 function toggleLang() {
   currentLang = currentLang === 'en' ? 'es' : 'en';
+
+  try { localStorage.setItem('aol_language', currentLang); } catch (e) {}
 
   // Toggle button: no flags, just language name
   document.getElementById('lang-label').textContent = currentLang === 'en' ? 'Español' : 'English';
@@ -872,7 +888,16 @@ function toggleLang() {
   if (auditLink) auditLink.textContent = t.auditCta;
 
   document.documentElement.lang = currentLang;
+  updateAuditLinks();
 }
+
+(function initializeLanguage() {
+  var requested = new URLSearchParams(window.location.search).get('lang');
+  var stored = '';
+  try { stored = localStorage.getItem('aol_language') || ''; } catch (e) {}
+  if (requested === 'es' || (!requested && stored === 'es')) toggleLang();
+  else updateAuditLinks();
+})();
 </script>
 
 
