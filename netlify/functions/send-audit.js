@@ -16,22 +16,6 @@ const FROM_EMAIL = 'hello@athletesoflife.online';
 const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || 'a.lever.p7@gmail.com';
 const CAL_LINK = 'https://calendly.com/admin-peptbiohacking/athletes-of-life-strategy-call';
 
-// Airtable config
-const AIRTABLE_BASE = 'app3b0yby6sGzBTYT';
-const AIRTABLE_AUDIT_TABLE = 'tblXL55K4V0LHwk2a';
-const AIRTABLE_PAT = process.env.AIRTABLE_PAT;
-
-async function airtablePost(fields) {
-  if (!AIRTABLE_PAT) throw new Error('AIRTABLE_PAT is not configured');
-  const response = await fetch('https://api.airtable.com/v0/' + AIRTABLE_BASE + '/' + AIRTABLE_AUDIT_TABLE, {
-    method: 'POST',
-    headers: { 'Authorization': 'Bearer ' + AIRTABLE_PAT, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ records: [{ fields }], typecast: true })
-  });
-  if (!response.ok) throw new Error('Airtable returned HTTP ' + response.status);
-  return response.json();
-}
-
 async function sendEmail(message) {
   const result = await resend.emails.send(message);
   if (!result || result.error) {
@@ -58,14 +42,9 @@ exports.handler = async function(event) {
     const socialMap = { tiny:'Under 500 followers', small:'500-5k followers', solid:'5k-25k followers', strong:'25k+ followers' };
     const deliveries = await Promise.allSettled([
       sendEmail({ from: FROM_EMAIL, to: email, subject: 'Welcome to Athletes of Life - You just took the first step', html: '<div style="background:#0A0A0A;color:#F5F5F0;font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:40px 32px;"><div style="font-size:22px;font-weight:900;color:#C9A84C;letter-spacing:.08em;margin-bottom:28px;">ATHLETES OF LIFE</div><h1 style="font-size:26px;font-weight:700;margin-bottom:16px;">Hey ' + escapeHtml(name) + ' - glad you are here.</h1><p style="color:#aaa;font-size:15px;line-height:1.75;margin-bottom:20px;">I am Anthony Lever. Former pro basketball player - 15 years around the world - and son of NBA All-Star Lafayette "Fat" Lever. I built Athletes of Life because I know firsthand how unprepared most athletes are for life after sport.</p><div style="background:#111;border:1px solid #222;border-radius:12px;padding:24px;margin-bottom:28px;"><div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9A84C;margin-bottom:12px;">Athlete Summary</div><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:8px 0;color:#777;font-size:13px;border-bottom:1px solid #1a1a1a;">Sport</td><td style="padding:8px 0;font-size:13px;text-align:right;border-bottom:1px solid #1a1a1a;">' + escapeHtml(sport) + '</td></tr><tr><td style="padding:8px 0;color:#777;font-size:13px;border-bottom:1px solid #1a1a1a;">Age Range</td><td style="padding:8px 0;font-size:13px;text-align:right;border-bottom:1px solid #1a1a1a;">' + escapeHtml(ageMap[age]||age) + '</td></tr><tr><td style="padding:8px 0;color:#777;font-size:13px;border-bottom:1px solid #1a1a1a;">Goal</td><td style="padding:8px 0;font-size:13px;text-align:right;border-bottom:1px solid #1a1a1a;">' + escapeHtml(goalMap[goal]||goal) + '</td></tr><tr><td style="padding:8px 0;color:#777;font-size:13px;">Social</td><td style="padding:8px 0;font-size:13px;text-align:right;">' + escapeHtml(socialMap[social]||social) + '</td></tr></table></div><a href="' + CAL_LINK + '" style="display:inline-block;background:#C9A84C;color:#000;font-weight:700;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;margin-bottom:28px;">Book a Free Strategy Call</a><p style="color:#777;font-size:13px;border-top:1px solid #1a1a1a;padding-top:20px;">- Anthony Lever<br><span style="color:#555;">Founder, Athletes of Life - Elev8ed Innovation LLC</span></p></div>' }),
-      sendEmail({ from: FROM_EMAIL, to: NOTIFY_EMAIL, subject: 'New Sports Parent Lead - ' + name + ' (' + sport + ')', html: '<div style="font-family:Arial,sans-serif;padding:24px;"><h2 style="color:#C9A84C;">New Sports Parent</h2><p><b>Name:</b> ' + escapeHtml(name) + '</p><p><b>Email:</b> ' + escapeHtml(email) + '</p><p><b>Sport:</b> ' + escapeHtml(sport) + '</p><p><b>Age:</b> ' + escapeHtml(ageMap[age]||age) + '</p><p><b>Goal:</b> ' + escapeHtml(goalMap[goal]||goal) + '</p><p><b>Social:</b> ' + escapeHtml(socialMap[social]||social) + '</p></div>' }),
-      airtablePost({
-        Name: name, Email: email, 'Business Stage': 'Idea',
-        'Full Responses': 'Sport: ' + sport + ' | Age: ' + (ageMap[age]||age) + ' | Goal: ' + (goalMap[goal]||goal) + ' | Social: ' + (socialMap[social]||social),
-        'Submitted At': new Date().toISOString().split('T')[0]
-      })
+      sendEmail({ from: FROM_EMAIL, to: NOTIFY_EMAIL, subject: 'New Sports Parent Lead - ' + name + ' (' + sport + ')', html: '<div style="font-family:Arial,sans-serif;padding:24px;"><h2 style="color:#C9A84C;">New Sports Parent</h2><p><b>Name:</b> ' + escapeHtml(name) + '</p><p><b>Email:</b> ' + escapeHtml(email) + '</p><p><b>Sport:</b> ' + escapeHtml(sport) + '</p><p><b>Age:</b> ' + escapeHtml(ageMap[age]||age) + '</p><p><b>Goal:</b> ' + escapeHtml(goalMap[goal]||goal) + '</p><p><b>Social:</b> ' + escapeHtml(socialMap[social]||social) + '</p></div>' })
     ]);
-    return { statusCode: 200, body: JSON.stringify({ success: deliveries[0].status === 'fulfilled', emailSent: deliveries[0].status === 'fulfilled', logged: deliveries[2].status === 'fulfilled' }) };
+    return { statusCode: 200, body: JSON.stringify({ success: deliveries[0].status === 'fulfilled', emailSent: deliveries[0].status === 'fulfilled' }) };
   }
 
   if (body.type === 'nil') {
@@ -75,14 +54,9 @@ exports.handler = async function(event) {
     const outcomeMap = { income:'Consistent monthly income', business:'A real business while I compete', foundation:'Foundation for after retirement', all:'All of the above - full system' };
     const deliveries = await Promise.allSettled([
       sendEmail({ from: FROM_EMAIL, to: email, subject: 'Welcome to Athletes of Life - your application is in', html: '<div style="background:#0A0A0A;color:#F5F5F0;font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:40px 32px;"><div style="font-size:22px;font-weight:900;color:#C9A84C;letter-spacing:.08em;margin-bottom:28px;">ATHLETES OF LIFE</div><h1 style="font-size:26px;font-weight:700;margin-bottom:16px;">We got you, ' + escapeHtml(name) + '.</h1><p style="color:#aaa;font-size:15px;line-height:1.75;margin-bottom:20px;">I am Anthony Lever. 15 years as a pro basketball player. Son of NBA All-Star Lafayette "Fat" Lever. Your Done-For-You application just came through.</p><div style="background:#111;border:1px solid #222;border-radius:12px;padding:24px;margin-bottom:28px;"><div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9A84C;margin-bottom:12px;">Your Application</div><table style="width:100%;border-collapse:collapse;"><tr><td style="padding:8px 0;color:#777;font-size:13px;border-bottom:1px solid #1a1a1a;">Sport</td><td style="padding:8px 0;font-size:13px;text-align:right;border-bottom:1px solid #1a1a1a;">' + escapeHtml(sport) + '</td></tr><tr><td style="padding:8px 0;color:#777;font-size:13px;border-bottom:1px solid #1a1a1a;">Situation</td><td style="padding:8px 0;font-size:13px;text-align:right;border-bottom:1px solid #1a1a1a;">' + escapeHtml(incomeMap[income]||income) + '</td></tr><tr><td style="padding:8px 0;color:#777;font-size:13px;border-bottom:1px solid #1a1a1a;">Bottleneck</td><td style="padding:8px 0;font-size:13px;text-align:right;border-bottom:1px solid #1a1a1a;">' + escapeHtml(blockMap[block]||block) + '</td></tr><tr><td style="padding:8px 0;color:#777;font-size:13px;">Outcome</td><td style="padding:8px 0;font-size:13px;text-align:right;">' + escapeHtml(outcomeMap[outcome]||outcome) + '</td></tr></table></div><a href="' + CAL_LINK + '" style="display:inline-block;background:#C9A84C;color:#000;font-weight:700;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;margin-bottom:28px;">Book Your Strategy Call</a><p style="color:#777;font-size:13px;border-top:1px solid #1a1a1a;padding-top:20px;">- Anthony Lever<br><span style="color:#555;">Founder, Athletes of Life - Elev8ed Innovation LLC</span></p></div>' }),
-      sendEmail({ from: FROM_EMAIL, to: NOTIFY_EMAIL, subject: 'New Done-For-You Application - ' + name + ' (' + sport + ')', html: '<div style="font-family:Arial,sans-serif;padding:24px;"><h2 style="color:#C9A84C;">New DFY Application</h2><p><b>Name:</b> ' + escapeHtml(name) + '</p><p><b>Email:</b> ' + escapeHtml(email) + '</p><p><b>Sport:</b> ' + escapeHtml(sport) + '</p><p><b>Income:</b> ' + escapeHtml(incomeMap[income]||income) + '</p><p><b>Block:</b> ' + escapeHtml(blockMap[block]||block) + '</p><p><b>Outcome:</b> ' + escapeHtml(outcomeMap[outcome]||outcome) + '</p></div>' }),
-      airtablePost({
-        Name: name, Email: email,
-        'Full Responses': 'Sport: ' + sport + ' | Income: ' + (incomeMap[income]||income) + ' | Block: ' + (blockMap[block]||block) + ' | Outcome: ' + (outcomeMap[outcome]||outcome),
-        'Submitted At': new Date().toISOString().split('T')[0]
-      })
+      sendEmail({ from: FROM_EMAIL, to: NOTIFY_EMAIL, subject: 'New Done-For-You Application - ' + name + ' (' + sport + ')', html: '<div style="font-family:Arial,sans-serif;padding:24px;"><h2 style="color:#C9A84C;">New DFY Application</h2><p><b>Name:</b> ' + escapeHtml(name) + '</p><p><b>Email:</b> ' + escapeHtml(email) + '</p><p><b>Sport:</b> ' + escapeHtml(sport) + '</p><p><b>Income:</b> ' + escapeHtml(incomeMap[income]||income) + '</p><p><b>Block:</b> ' + escapeHtml(blockMap[block]||block) + '</p><p><b>Outcome:</b> ' + escapeHtml(outcomeMap[outcome]||outcome) + '</p></div>' })
     ]);
-    return { statusCode: 200, body: JSON.stringify({ success: deliveries[0].status === 'fulfilled', emailSent: deliveries[0].status === 'fulfilled', logged: deliveries[2].status === 'fulfilled' }) };
+    return { statusCode: 200, body: JSON.stringify({ success: deliveries[0].status === 'fulfilled', emailSent: deliveries[0].status === 'fulfilled' }) };
   }
 
   let audit;
@@ -142,32 +116,22 @@ exports.handler = async function(event) {
 
   const deliveries = await Promise.allSettled([
     sendEmail({ from: FROM_EMAIL, to: audit.email, subject: emailCopy.subject, html: athleteEmailHtml }),
-    sendEmail({ from: FROM_EMAIL, to: NOTIFY_EMAIL, subject: 'New Audit — ' + audit.name + ' (' + audit.sport + ') — ' + audit.totalScore + '/50 [' + audit.language.toUpperCase() + ']', html: notificationHtml }),
-    airtablePost({
-      Name: audit.name,
-      Email: audit.email,
-      'Business Stage': audit.totalScore >= 34 ? 'Growing' : audit.totalScore >= 15 ? 'Launching' : 'Idea',
-      'Overall Score': audit.totalScore,
-      'Full Responses': 'Language: ' + audit.language.toUpperCase() + ' | Sport: ' + audit.sport + ' | Income: ' + copy.income[audit.income] + ' | Track: ' + trackName + ' | Scores: ' + scoresSummary + '\n\n' + auditText,
-      'Submitted At': new Date().toISOString().split('T')[0]
-    })
+    sendEmail({ from: FROM_EMAIL, to: NOTIFY_EMAIL, subject: 'New Audit — ' + audit.name + ' (' + audit.sport + ') — ' + audit.totalScore + '/50 [' + audit.language.toUpperCase() + ']', html: notificationHtml })
   ]);
 
   deliveries.forEach((result, index) => {
-    if (result.status === 'rejected') console.error(['Athlete email', 'Notification email', 'Airtable write'][index] + ' failed:', result.reason && result.reason.message);
+    if (result.status === 'rejected') console.error(['Athlete email', 'Notification email'][index] + ' failed:', result.reason && result.reason.message);
   });
 
   const emailSent = deliveries[0].status === 'fulfilled';
-  const logged = deliveries[2].status === 'fulfilled';
   const warnings = [];
   if (!emailSent) warnings.push('athlete_email_failed');
   if (deliveries[1].status !== 'fulfilled') warnings.push('notification_email_failed');
-  if (!logged) warnings.push('airtable_write_failed');
 
   return {
     statusCode: 200,
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ audit: auditText, success: emailSent, emailSent, logged, generatedByAi, language: audit.language, warnings })
+    body: JSON.stringify({ audit: auditText, success: emailSent, emailSent, generatedByAi, language: audit.language, warnings })
   };
 };
 

@@ -26,7 +26,6 @@ One repo to power athletesoflife.online:
 |----------|---------|
 | `RESEND_API_KEY` | Sends welcome + notification emails from `hello@athletesoflife.online` |
 | `ANTHROPIC_API_KEY` | Generates personalized audit text via Claude |
-| `AIRTABLE_PAT` | Records audit submissions in Airtable |
 | `NOTIFY_EMAIL` | Where lead notifications go (default: a.lever.p7@gmail.com) |
 | `ANTHROPIC_MODEL` | Optional model override (defaults to `claude-sonnet-5`) |
 
@@ -34,7 +33,7 @@ One repo to power athletesoflife.online:
 
 - English: `/audit/?lang=en`
 - Spanish: `/audit/?lang=es`
-- The selected language is carried through the questionnaire, generated report, results page, athlete email, fallback report, and Airtable record.
+- The selected language is carried through the questionnaire, generated report, results page, athlete email, and fallback report.
 - Scoring and track selection use stable internal keys and are recalculated by the server.
 
 ## Verification
