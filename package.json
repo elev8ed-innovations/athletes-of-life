@@ -2,6 +2,10 @@
   "name": "athletes-of-life",
   "version": "1.0.0",
   "description": "Athletes of Life — Hub + Audit + email workflows",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check netlify/functions/audit-utils.js && node --check netlify/functions/send-audit.js && node --test"
+  },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.20.0",
     "resend": "^3.2.0"

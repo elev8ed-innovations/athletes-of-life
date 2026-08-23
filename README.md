@@ -4,7 +4,7 @@
 
 One repo to power athletesoflife.online:
 - **Hub** — Main landing page (Zima-style, bilingual EN/ES)
-- **Audit** — Business Readiness Assessment (5-dimension scoring + Claude-generated audit)
+- **Audit** — Bilingual EN/ES Business Readiness Assessment (5-dimension scoring + Claude-generated audit)
 - **Email** — Resend-powered flows (`hello@athletesoflife.online`)
 
 ## Structure
@@ -27,6 +27,22 @@ One repo to power athletesoflife.online:
 | `RESEND_API_KEY` | Sends welcome + notification emails from `hello@athletesoflife.online` |
 | `ANTHROPIC_API_KEY` | Generates personalized audit text via Claude |
 | `NOTIFY_EMAIL` | Where lead notifications go (default: a.lever.p7@gmail.com) |
+| `ANTHROPIC_MODEL` | Optional model override (defaults to `claude-sonnet-5`) |
+
+## Bilingual Audit Flow
+
+- English: `/audit/?lang=en`
+- Spanish: `/audit/?lang=es`
+- The selected language is carried through the questionnaire, generated report, results page, athlete email, and fallback report.
+- Scoring and track selection use stable internal keys and are recalculated by the server.
+
+## Verification
+
+```bash
+npm ci
+npm run check
+npm audit --omit=dev
+```
 
 ## Domains
 
