@@ -23,7 +23,7 @@
 <meta name="twitter:description" content="The game changes. Your drive carries forward. Build your next season with Athletes of Life.">
 <meta name="twitter:image" content="https://athletesoflife.online/assets/athletes-of-life-share.jpg">
 <meta name="twitter:image:alt" content="An anonymous athlete looks out across the ocean at sunrise from a coastal overlook.">
-<meta name="theme-color" content="#252420">
+<meta name="theme-color" content="#101915">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Athletes of Life">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -420,9 +420,8 @@ footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;j
   .aol-hero,.aol-story{padding:0}
   .aol-hero{min-height:min(92svh,980px);position:relative;display:flex;align-items:center;overflow:hidden;background:#101915;isolation:isolate}
   .aol-hero-media,.aol-hero-shade{position:absolute;inset:0}
-  .aol-hero-media img,.aol-hero-media video{width:100%;height:100%;object-fit:cover;object-position:center 54%;filter:saturate(.86)}
-  .aol-hero-media img{animation:none}
-  .aol-hero-media video{position:absolute;inset:0}
+  .aol-hero-media picture{position:absolute;inset:0;display:block}
+  .aol-hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 54%;filter:saturate(.9);animation:none}
   .aol-hero-shade{background:linear-gradient(90deg,rgba(8,15,12,.88),rgba(8,15,12,.63) 36%,rgba(8,15,12,.04) 83%),linear-gradient(0deg,rgba(8,15,12,.6),transparent 36%)}
   .aol-hero-copy{position:relative;z-index:2;width:min(1240px,100%);margin:0 auto;padding:130px clamp(22px,6vw,84px) 112px}
   .aol-eyebrow{font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:21px}
@@ -436,7 +435,7 @@ footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;j
   .aol-scroll-cue{display:flex;align-items:center;gap:12px}.aol-scroll-cue::before{content:"";width:44px;height:1px;background:var(--gold)}
   .aol-story{position:relative;background:#101915}
   .aol-story-stage{height:100svh;position:sticky;top:0;margin-bottom:-100svh;overflow:hidden;isolation:isolate;background:#101915}
-  .aol-stage-image{position:absolute;inset:-2%;background:url("assets/next-season-hero.png") center 55%/cover no-repeat;filter:brightness(.92) saturate(.78);transform:scale(1.01);transition:transform 1.8s cubic-bezier(.22,.61,.36,1),filter 1.8s cubic-bezier(.22,.61,.36,1)}
+  .aol-stage-image{position:absolute;inset:-2%;background:url("assets/next-season-athlete.webp") center 55%/cover no-repeat;filter:brightness(.92) saturate(.78);transform:scale(1.01);transition:transform 1.8s cubic-bezier(.22,.61,.36,1),filter 1.8s cubic-bezier(.22,.61,.36,1)}
   .aol-story-stage::before{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,rgba(8,15,12,.84),rgba(8,15,12,.48) 50%,rgba(8,15,12,.17)),linear-gradient(0deg,rgba(8,15,12,.7),transparent 55%)}
   .aol-story-stage::after{content:"";position:absolute;z-index:2;inset:7% 4%;border:1px solid rgba(243,239,230,.15);pointer-events:none}
   .aol-stage-top{position:absolute;z-index:3;top:13%;left:clamp(34px,8vw,130px);right:clamp(34px,8vw,130px);display:flex;justify-content:space-between;align-items:flex-start}
@@ -483,18 +482,44 @@ footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;j
   .gold-stripe{height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
   .motion-paused *, .motion-paused *::before, .motion-paused *::after{animation-play-state:paused!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
   @media(max-width:960px){.aol-track-grid{grid-template-columns:repeat(2,1fr)}.aol-track-card{border-bottom:1px solid var(--bdr-m);min-height:160px}.aol-track-card:nth-child(2n){border-right:0}.aol-track-card:last-child{border-bottom:0}.aol-track-card:nth-last-child(2){border-bottom:0}}
-  @media(max-width:760px){nav.aol-nav{padding:13px 18px}.aol-nav .nav-links{display:none}.aol-hero{min-height:90svh}.aol-hero-media img,.aol-hero-media video{object-position:62% center}.aol-hero-shade{background:linear-gradient(90deg,rgba(8,15,12,.82),rgba(8,15,12,.36) 80%),linear-gradient(0deg,rgba(8,15,12,.66),transparent 56%)}.aol-hero-copy{padding:115px 22px 115px}.aol-hero h1{font-size:clamp(78px,20vw,132px)}.aol-hero-sub{max-width:350px;font-size:14px}.aol-stage-top{top:11%;left:8%;right:8%}.aol-stage-title{font-size:16vw}.aol-stage-count{font-size:11px}.aol-story-stage::after{inset:6% 3%}.aol-stage-caption{left:8%;bottom:21%;max-width:205px;font-size:9px}.aol-progress{left:8%;right:8%;bottom:11%}.aol-chapter{min-height:88svh;padding:95px 22px 125px;align-items:flex-end}.aol-chapter-copy{padding:20px;width:min(370px,100%)}.aol-chapter h2{font-size:53px}.aol-chapter p{font-size:13px}.aol-tracks{padding:80px 22px}.aol-track-grid{grid-template-columns:1fr}.aol-track-card,.aol-track-card:nth-child(2n),.aol-track-card:nth-last-child(2){border-right:0;border-bottom:1px solid var(--bdr-m);margin:0;min-height:0;padding:19px 0}.aol-track-no{margin-bottom:10px}.aol-track-card:last-child{border-bottom:0}.about-inner::after{display:none}}
-  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.aol-hero-media img{animation:none}.aol-hero-media video{display:none}.aol-stage-image,.aol-court-line{transition:none}.aol-motion-toggle{display:none}}
+  @media(max-width:760px){nav.aol-nav{padding:13px 18px}.aol-nav .nav-links{display:none}.aol-hero{min-height:90svh}.aol-hero-media img{object-position:center center}.aol-hero-equipment .aol-hero-media picture{height:112%;bottom:auto}.aol-hero-equipment .aol-hero-media img{object-position:center top}.aol-hero-shade{background:linear-gradient(90deg,rgba(8,15,12,.84),rgba(8,15,12,.52) 58%,rgba(8,15,12,.2)),linear-gradient(0deg,rgba(8,15,12,.68),transparent 62%)}.aol-hero-copy{padding:92px 22px 98px}.aol-hero h1{font-size:clamp(68px,17vw,104px)}.aol-hero-sub{max-width:350px;font-size:14px}.aol-hero-actions .btn-gold,.aol-hero-actions .btn-outline{padding:12px 14px;font-size:9px;letter-spacing:.08em}.aol-hero-actions{gap:12px}.aol-stage-top{top:11%;left:8%;right:8%}.aol-stage-title{font-size:16vw}.aol-stage-count{font-size:11px}.aol-story-stage::after{inset:6% 3%}.aol-stage-caption{left:8%;bottom:21%;max-width:205px;font-size:9px}.aol-progress{left:8%;right:8%;bottom:11%}.aol-chapter{min-height:88svh;padding:95px 22px 125px;align-items:flex-end}.aol-chapter-copy{padding:20px;width:min(370px,100%)}.aol-chapter h2{font-size:53px}.aol-chapter p{font-size:13px}.aol-tracks{padding:80px 22px}.aol-track-grid{grid-template-columns:1fr}.aol-track-card,.aol-track-card:nth-child(2n),.aol-track-card:nth-last-child(2){border-right:0;border-bottom:1px solid var(--bdr-m);margin:0;min-height:0;padding:19px 0}.aol-track-no{margin-bottom:10px}.aol-track-card:last-child{border-bottom:0}.about-inner::after{display:none}}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.aol-hero-media img{animation:none}.aol-stage-image,.aol-court-line{transition:none}.aol-motion-toggle{display:none}}
 </style>
 <style>
   body.entry-locked{overflow:hidden}
-  #portal{justify-content:flex-start;cursor:default;background:linear-gradient(90deg,rgba(8,15,12,.82) 0%,rgba(8,15,12,.62) 42%,rgba(8,15,12,.12) 100%),linear-gradient(0deg,rgba(8,15,12,.48),transparent 45%),url("assets/next-season-hero.png") center 54%/cover no-repeat #101915;transition:opacity .85s ease}
+  #portal{justify-content:flex-start;align-items:flex-start;overflow:hidden;cursor:default;background:linear-gradient(90deg,rgba(8,15,12,.78) 0%,rgba(8,15,12,.52) 42%,rgba(8,15,12,.06) 100%),linear-gradient(0deg,rgba(8,15,12,.4),transparent 46%),url("assets/next-season-athlete.webp") center 54%/cover no-repeat #101915;transition:opacity .85s ease}
+  #portal::after{content:"";position:absolute;z-index:1;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 25%,rgba(212,164,86,.16) 48%,rgba(255,221,150,.08) 51%,transparent 70%);transform:translateX(-110%);animation:portalLightSweep 2.3s cubic-bezier(.2,.6,.2,1) .25s both;mix-blend-mode:screen}
+  @keyframes portalLightSweep{0%{transform:translateX(-110%)}55%{transform:translateX(0)}100%{transform:translateX(110%)}}
+  @keyframes captionFuse{0%{opacity:0;transform:translateY(18px);filter:blur(7px);letter-spacing:.18em}100%{opacity:1;transform:none;filter:blur(0)}}
+  #portal.language-replay::after{animation:portalLightSweep 1.15s cubic-bezier(.2,.6,.2,1) both}
+  #portal.language-replay .portal-eyebrow{animation:captionFuse .6s ease both}
+  #portal.language-replay .portal-title{animation:captionFuse .78s cubic-bezier(.2,.7,.2,1) .08s both}
+  #portal.language-replay .portal-sub{animation:captionFuse .7s ease .22s both}
+  #portal.language-replay .enter-btn{animation:captionFuse .6s ease .34s both}
+  .aol-hero-copy.language-arrival .aol-eyebrow{animation:captionFuse .55s ease both}
+  .aol-hero-copy.language-arrival h1{animation:captionFuse .72s cubic-bezier(.2,.7,.2,1) .08s both}
+  .aol-hero-copy.language-arrival .aol-hero-sub,.aol-hero-copy.language-arrival .aol-hero-actions{animation:captionFuse .68s ease .18s both}
+  .portal-language-toggle{position:absolute;z-index:4;top:max(22px,env(safe-area-inset-top));right:clamp(18px,3vw,44px);min-height:42px;padding:0 16px;border:1px solid rgba(243,239,230,.38);background:rgba(12,20,17,.45);color:#f3efe6;font:700 10px/1 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(8px);transition:background .2s,border-color .2s}
+  .portal-language-toggle:hover{background:rgba(212,164,86,.2);border-color:var(--gold)}
+  .arena-warp{position:fixed;z-index:1001;inset:0;display:grid;place-items:center;overflow:hidden;visibility:hidden;opacity:0;pointer-events:none;background:radial-gradient(ellipse at 50% 52%,rgba(16,25,21,.7) 0 16%,rgba(8,14,11,.82) 58%,rgba(4,8,7,.98) 100%);transition:opacity .5s ease,visibility 0s linear .5s}
+  .arena-warp::before{content:"";position:absolute;inset:-50%;background:repeating-conic-gradient(from 8deg at 50% 50%,transparent 0deg 8deg,rgba(212,164,86,.22) 8.15deg 8.35deg,transparent 8.5deg 16deg);mask-image:radial-gradient(ellipse,transparent 0 15%,#000 36%,transparent 70%);opacity:0}
+  .arena-warp::after{content:"";position:absolute;left:-20%;right:-20%;top:42%;height:18%;border-block:1px solid rgba(241,200,119,.7);background:linear-gradient(90deg,transparent,rgba(212,163,78,.2),transparent);opacity:0;filter:blur(1px)}
+  .arena-warp.is-active{visibility:visible;opacity:1;pointer-events:auto;transition-delay:0s}
+  .arena-warp.is-active::before{animation:arenaRush 1.8s cubic-bezier(.18,.7,.14,1) both}
+  .arena-warp.is-active::after{animation:courtFlash 1.8s ease-out both}
+  .arena-warp-copy{position:relative;z-index:1;padding:24px;text-align:center;text-shadow:0 3px 30px #000;animation:none}
+  .arena-warp.is-active .arena-warp-copy{animation:captionFuse .8s cubic-bezier(.18,.7,.2,1) both .12s}
+  .arena-warp-copy span{display:block;margin-bottom:14px;color:var(--gold);font-size:10px;font-weight:700;letter-spacing:.34em}
+  .arena-warp-copy strong{display:block;color:var(--ink);font:400 clamp(40px,6vw,78px)/.9 'Bebas Neue',sans-serif;letter-spacing:.09em}
+  @keyframes arenaRush{0%{transform:scale(.15) rotate(-10deg);opacity:0}24%{opacity:.9}100%{transform:scale(1.8) rotate(8deg);opacity:0}}
+  @keyframes courtFlash{0%{transform:scaleX(.02);opacity:0}26%{transform:scaleX(1);opacity:1}73%{opacity:.65}100%{transform:scaleX(1.5);opacity:0}}
+  #portal .portal-ui{padding-top:clamp(78px,11vh,124px)}
   #portal canvas{display:none}
   #portal .portal-ui{width:min(680px,100%);margin-left:clamp(22px,7vw,110px);padding:24px;text-align:left;animation:riseIn 1s cubic-bezier(.2,.7,.2,1) both .15s}
   #portal .portal-eyebrow{margin-bottom:20px;font-size:10px;letter-spacing:.3em}
   #portal .portal-title{margin:0;color:#f3efe6;font-size:clamp(72px,12vw,154px);line-height:.82;letter-spacing:.015em;text-shadow:0 4px 40px rgba(0,0,0,.45)}
-  #portal .portal-sub{max-width:455px;margin:22px 0 30px;font-size:clamp(14px,1.6vw,17px)}
-  #portal .enter-btn{animation:none;border-radius:0;padding:16px 23px;background:var(--gold);color:#101915;font-size:11px;letter-spacing:.15em}
+  #portal .portal-sub{max-width:455px;margin:18px 0 23px;font-size:clamp(14px,1.6vw,17px);line-height:1.55}
+  #portal .enter-btn{animation:none;border-radius:0;min-height:48px;padding:14px 21px;background:var(--gold);color:#101915;font-size:11px;letter-spacing:.15em}
   #portal .portal-hint{left:auto;right:clamp(22px,5vw,76px);bottom:26px;text-align:right;color:rgba(242,237,228,.66);font-size:9px;letter-spacing:.2em}
   #portal.leaving{opacity:0;pointer-events:none}
   .aol-hero-actions .btn-outline{white-space:normal}
@@ -512,20 +537,26 @@ footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;j
   .aol-welcome h2{font:400 clamp(48px,6vw,78px)/.9 'Bebas Neue',sans-serif;text-transform:uppercase;margin:17px 0;color:var(--ink)}
   .aol-welcome-copy>p:not(.section-eyebrow){max-width:450px;margin:0 0 24px;color:var(--ink3);font-size:14px;line-height:1.75}
   .aol-welcome .loom-wrap{overflow:hidden;border:1px solid rgba(243,239,230,.18);box-shadow:0 18px 55px rgba(0,0,0,.28)}
-  @media(max-width:760px){#portal{background-position:62% center;background-image:linear-gradient(90deg,rgba(8,15,12,.82),rgba(8,15,12,.37) 82%),linear-gradient(0deg,rgba(8,15,12,.58),transparent 48%),url("assets/next-season-hero.png")}#portal .portal-ui{margin:0;padding:24px;width:min(550px,100%)}#portal .portal-title{font-size:clamp(76px,18vw,128px)}#portal .portal-sub{max-width:345px;font-size:14px}#portal .portal-hint{left:24px;right:24px;text-align:left}.aol-welcome-inner{grid-template-columns:1fr}.aol-welcome{padding:76px 22px}}
-  @media(prefers-reduced-motion:reduce){#portal{transition:none}#portal .portal-ui{animation:none}}
+  .portal-hint-mobile{display:none}
+  @media(max-width:760px){#portal{background-position:92% center;background-image:linear-gradient(90deg,rgba(8,15,12,.76),rgba(8,15,12,.34) 56%,rgba(8,15,12,.08)),linear-gradient(0deg,rgba(8,15,12,.4),transparent 54%),url("assets/next-season-athlete.webp")}#portal .portal-ui{margin:0;padding:clamp(95px,14vh,132px) 22px 24px;width:min(250px,100%)}#portal .portal-title{font-size:clamp(50px,13vw,56px);line-height:.84;letter-spacing:0}#portal .portal-title.is-spanish{font-size:45px;line-height:.9}#portal .portal-eyebrow{max-width:205px;margin-bottom:14px;font-size:9px;letter-spacing:.19em;line-height:1.5}#portal .portal-sub{max-width:205px;margin:16px 0 20px;font-size:14px;line-height:1.5}#portal .enter-btn{min-height:44px;padding:11px 12px;font-size:9px;letter-spacing:.08em}#portal .portal-hint{left:22px;right:22px;bottom:max(22px,env(safe-area-inset-bottom));text-align:left}#portal .portal-hint-wide{display:none}.portal-hint-mobile{display:inline}.portal-language-toggle{top:max(14px,env(safe-area-inset-top));right:14px;min-height:38px;padding:0 12px}.aol-welcome-inner{grid-template-columns:1fr}.aol-welcome{padding:76px 22px}}
+  @media(max-width:440px){nav.aol-nav{padding-left:12px;padding-right:12px;gap:8px}.aol-nav .nav-logo{font-size:16px;letter-spacing:.1em;white-space:nowrap}.aol-nav .nav-actions{gap:7px}.aol-nav #lang-toggle{padding:8px!important;font-size:10px!important}.aol-nav .nav-cta{padding:9px 10px;font-size:9px!important;letter-spacing:.07em;white-space:nowrap}}
+  @media(max-width:380px){#portal .portal-title{font-size:49px}#portal .portal-sub{max-width:198px}.aol-nav .nav-logo{font-size:14px}.aol-nav .nav-cta{padding:8px}}
+  @media(max-height:680px) and (max-width:760px){#portal .portal-ui{padding-top:82px}#portal .portal-title{font-size:54px}#portal .portal-sub{margin:12px 0 16px}#portal .portal-hint{bottom:14px}}
+  @media(prefers-reduced-motion:reduce){#portal{transition:none}#portal .portal-ui{animation:none}#portal::after{display:none}}
 </style>
 </head>
 <body class="entry-locked">
 <div id="portal" role="region" aria-label="Athletes of Life entrance">
+  <button class="portal-language-toggle" id="portal-lang-toggle" type="button" onclick="toggleLang()" aria-label="Switch language"><span id="portal-lang-label">Español</span></button>
   <div class="portal-ui">
-    <div class="portal-eyebrow">ATHLETES OF LIFE · THE NEXT SEASON</div>
-    <h1 class="portal-title">THE NEXT<br>SEASON</h1>
-    <p class="portal-sub">Your drive does not retire. Step into the next season and see what you can build with it.</p>
-    <button class="enter-btn" id="enterBtn" type="button">ENTER THE PLATFORM <span aria-hidden="true">→</span></button>
+    <div class="portal-eyebrow" data-en="BUILT BY AN ATHLETE · FOR WHAT COMES NEXT" data-es="CREADO POR UN ATLETA · PARA LO QUE SIGUE">BUILT BY AN ATHLETE · FOR WHAT COMES NEXT</div>
+    <h1 class="portal-title" id="portal-title">THE NEXT<br>SEASON</h1>
+    <p class="portal-sub" data-en="The game changes. Your drive carries forward." data-es="El juego cambia. Tu impulso sigue adelante.">The game changes. Your drive carries forward.</p>
+    <button class="enter-btn" id="enterBtn" type="button">ENTER THE ARENA <span aria-hidden="true">→</span></button>
   </div>
-  <div class="portal-hint">PRESS ENTER TO STEP IN</div>
+  <div class="portal-hint"><span class="portal-hint-wide" data-en="PRESS ENTER TO STEP IN" data-es="PRESIONA ENTER PARA ENTRAR">PRESS ENTER TO STEP IN</span><span class="portal-hint-mobile" data-en="TAP TO ENTER" data-es="TOCA PARA ENTRAR">TAP TO ENTER</span></div>
 </div>
+<div class="arena-warp" id="arena-warp" aria-hidden="true"><div class="arena-warp-copy"><span id="arena-warp-kicker">ATHLETES OF LIFE · THE NEXT SEASON</span><strong id="arena-warp-title">ENTER THE ARENA</strong></div></div>
 <div id="hub" class="show" inert>
 
 
@@ -552,12 +583,12 @@ footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;j
 </nav>
 
 <main>
-<section class="aol-hero" id="top" aria-labelledby="new-hero-title">
+<section class="aol-hero aol-hero-equipment" id="top" aria-labelledby="new-hero-title">
   <div class="aol-hero-media" aria-hidden="true">
-    <img src="assets/next-season-hero.png" alt="" fetchpriority="high">
-    <video class="aol-hero-video" muted loop playsinline preload="none" poster="assets/next-season-hero.png" aria-hidden="true">
-      <source src="assets/next-season-loop.mp4" type="video/mp4">
-    </video>
+    <picture>
+      <source media="(max-width: 760px)" srcset="assets/next-season-equipment-mobile.webp" type="image/webp">
+      <img src="assets/next-season-equipment-wide.webp" alt="" fetchpriority="high" decoding="async">
+    </picture>
   </div>
   <div class="aol-hero-shade" aria-hidden="true"></div>
   <div class="aol-hero-copy">
@@ -953,6 +984,24 @@ function updateAuditLinks() {
   });
 }
 
+function replayLanguageArrival() {
+  var portal=document.getElementById('portal');
+  if(portal&&portal.isConnected){
+    portal.classList.remove('language-replay');
+    void portal.offsetWidth;
+    portal.classList.add('language-replay');
+    window.setTimeout(function(){portal.classList.remove('language-replay');},1250);
+    return;
+  }
+  var heroCopy=document.querySelector('.aol-hero-copy');
+  if(heroCopy){
+    heroCopy.classList.remove('language-arrival');
+    void heroCopy.offsetWidth;
+    heroCopy.classList.add('language-arrival');
+    window.setTimeout(function(){heroCopy.classList.remove('language-arrival');},1100);
+  }
+}
+
 function openAudit(target) {
   window.open(auditUrl(), target || '_self');
 }
@@ -964,6 +1013,18 @@ function toggleLang() {
 
   // Toggle button: no flags, just language name
   document.getElementById('lang-label').textContent = currentLang === 'en' ? 'Español' : 'English';
+  var portalLanguageLabel=document.getElementById('portal-lang-label');
+  if(portalLanguageLabel)portalLanguageLabel.textContent=currentLang==='en'?'Español':'English';
+  var portalTitle=document.getElementById('portal-title');
+  if(portalTitle){portalTitle.classList.toggle('is-spanish',currentLang==='es');portalTitle.innerHTML=currentLang==='en'?'THE NEXT<br>SEASON':(window.matchMedia('(max-width:760px)').matches?'LA<br>PRÓXIMA<br>TEMPORADA':'LA PRÓXIMA<br>TEMPORADA');}
+  var portalButton=document.getElementById('enterBtn');
+  if(portalButton)portalButton.innerHTML=(currentLang==='en'?'ENTER THE ARENA':'ENTRA A LA ARENA')+' <span aria-hidden="true">→</span>';
+  var portal=document.getElementById('portal');
+  if(portal)portal.setAttribute('aria-label',currentLang==='en'?'Athletes of Life entrance':'Entrada de Athletes of Life');
+  var warpKicker=document.getElementById('arena-warp-kicker');
+  var warpTitle=document.getElementById('arena-warp-title');
+  if(warpKicker)warpKicker.textContent=currentLang==='en'?'ATHLETES OF LIFE · THE NEXT SEASON':'ATHLETES OF LIFE · LA PRÓXIMA TEMPORADA';
+  if(warpTitle)warpTitle.textContent=currentLang==='en'?'ENTER THE ARENA':'ENTRA A LA ARENA';
 
   // Hero title: swap innerHTML to preserve <span> gold colour and <br> line breaks
   var heroTitle = document.getElementById('hero-title');
@@ -1064,6 +1125,7 @@ function toggleLang() {
   document.documentElement.lang = currentLang;
   updateAuditLinks();
   if (window.updateStoryLang) window.updateStoryLang();
+  replayLanguageArrival();
 }
 
 (function initializeLanguage() {
@@ -1131,24 +1193,31 @@ function toggleLang() {
   var portal=document.getElementById("portal");
   var enterButton=document.getElementById("enterBtn");
   var hub=document.getElementById("hub");
-  var heroVideo=document.querySelector(".aol-hero-video");
+  var warp=document.getElementById("arena-warp");
   var entering=false;
   if(!portal||!enterButton||!hub)return;
   function enterPlatform(){
     if(entering)return;
     entering=true;
-    document.body.classList.remove("entry-locked");
     hub.removeAttribute("inert");
-    window.scrollTo(0,0);
     portal.classList.add("leaving");
-    if(heroVideo&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
-      heroVideo.play().catch(function(){});
-    }
-    window.setTimeout(function(){if(portal.parentNode)portal.parentNode.removeChild(portal);},900);
+    var reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var transitionDuration=reducedMotion?220:1800;
+    if(warp){warp.setAttribute("aria-hidden","false");warp.classList.add("is-active");}
+    window.setTimeout(function(){if(portal.parentNode)portal.parentNode.removeChild(portal);},reducedMotion?0:650);
+    window.setTimeout(function(){
+      document.body.classList.remove("entry-locked");
+      window.scrollTo(0,0);
+      if(warp){warp.classList.remove("is-active");warp.setAttribute("aria-hidden","true");}
+    },transitionDuration);
   }
   enterButton.addEventListener("click",enterPlatform);
   document.addEventListener("keydown",function(event){
-    if(event.key==="Enter"&&portal.isConnected&&!entering)enterPlatform();
+    if(event.key==="Enter"&&portal.isConnected&&!entering){
+      if(event.target&&event.target.closest&&event.target.closest("button,a,input,select,textarea"))return;
+      event.preventDefault();
+      enterPlatform();
+    }
   });
 })();
 </script>
