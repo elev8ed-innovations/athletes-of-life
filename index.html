@@ -405,8 +405,6 @@ footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;j
 #hub{display:none}
 #hub.show{display:block;opacity:0;animation:hubFadeIn .9s ease both}
 @keyframes hubFadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.portal-skip #portal{display:none !important}
-.portal-skip #hub{display:block !important;opacity:1 !important;animation:none !important}
 </style>
 <style>
   :root{--cream:#101915;--cream2:#18231e;--cream3:#28352e;--white:#1b2821;--gold:#d4a456;--gold-l:#e2c486;--gold-dim:rgba(212,164,86,.13);--gold-bdr:rgba(212,164,86,.34);--slate:#121c18;--slate2:#1a2620;--slate3:#24312a;--ink:#f3efe6;--ink2:#d9d9d1;--ink3:#b9c0b8;--ink4:#8c968e;--bdr:rgba(243,239,230,.12);--bdr-m:rgba(243,239,230,.2)}
@@ -423,7 +421,7 @@ footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;j
   .aol-hero{min-height:min(92svh,980px);position:relative;display:flex;align-items:center;overflow:hidden;background:#101915;isolation:isolate}
   .aol-hero-media,.aol-hero-shade{position:absolute;inset:0}
   .aol-hero-media img,.aol-hero-media video{width:100%;height:100%;object-fit:cover;object-position:center 54%;filter:saturate(.86)}
-  .aol-hero-media img{animation:aol-drift 24s ease-in-out infinite alternate}
+  .aol-hero-media img{animation:none}
   .aol-hero-media video{position:absolute;inset:0}
   .aol-hero-shade{background:linear-gradient(90deg,rgba(8,15,12,.88),rgba(8,15,12,.63) 36%,rgba(8,15,12,.04) 83%),linear-gradient(0deg,rgba(8,15,12,.6),transparent 36%)}
   .aol-hero-copy{position:relative;z-index:2;width:min(1240px,100%);margin:0 auto;padding:130px clamp(22px,6vw,84px) 112px}
@@ -438,7 +436,7 @@ footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;j
   .aol-scroll-cue{display:flex;align-items:center;gap:12px}.aol-scroll-cue::before{content:"";width:44px;height:1px;background:var(--gold)}
   .aol-story{position:relative;background:#101915}
   .aol-story-stage{height:100svh;position:sticky;top:0;margin-bottom:-100svh;overflow:hidden;isolation:isolate;background:#101915}
-  .aol-stage-image{position:absolute;inset:-2%;background:url("assets/next-season-hero.png") center 55%/cover no-repeat;filter:saturate(.8);transform:scale(1.02);transition:transform 1.4s cubic-bezier(.2,.7,.2,1),filter 1s}
+  .aol-stage-image{position:absolute;inset:-2%;background:url("assets/next-season-hero.png") center 55%/cover no-repeat;filter:brightness(.92) saturate(.78);transform:scale(1.01);transition:transform 1.8s cubic-bezier(.22,.61,.36,1),filter 1.8s cubic-bezier(.22,.61,.36,1)}
   .aol-story-stage::before{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,rgba(8,15,12,.84),rgba(8,15,12,.48) 50%,rgba(8,15,12,.17)),linear-gradient(0deg,rgba(8,15,12,.7),transparent 55%)}
   .aol-story-stage::after{content:"";position:absolute;z-index:2;inset:7% 4%;border:1px solid rgba(243,239,230,.15);pointer-events:none}
   .aol-stage-top{position:absolute;z-index:3;top:13%;left:clamp(34px,8vw,130px);right:clamp(34px,8vw,130px);display:flex;justify-content:space-between;align-items:flex-start}
@@ -455,13 +453,13 @@ footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;j
   .aol-chapter-no{font:400 13px 'Bebas Neue',sans-serif;letter-spacing:.18em;color:var(--gold)}
   .aol-chapter h2{font:400 clamp(43px,6vw,76px)/.91 'Bebas Neue',sans-serif;text-transform:uppercase;margin:15px 0;letter-spacing:-.01em;color:var(--ink)}
   .aol-chapter p{margin:0;color:rgba(243,239,230,.82);font-size:14px;line-height:1.75;max-width:395px}
-  .aol-story-stage[data-step="1"] .aol-stage-image{transform:scale(1.08) translateX(1%);filter:brightness(.76) saturate(.78)}
+  .aol-story-stage[data-step="1"] .aol-stage-image{transform:scale(1.02) translateX(-.1%);filter:brightness(.93) saturate(.79)}
   .aol-story-stage[data-step="1"] .aol-court-line{transform:scaleX(.38)}
-  .aol-story-stage[data-step="2"] .aol-stage-image{transform:scale(1.13) translateX(-1%);filter:brightness(.82) saturate(.82)}
+  .aol-story-stage[data-step="2"] .aol-stage-image{transform:scale(1.03) translateX(-.2%);filter:brightness(.95) saturate(.81)}
   .aol-story-stage[data-step="2"] .aol-court-line{transform:scaleX(.56)}
-  .aol-story-stage[data-step="3"] .aol-stage-image{transform:scale(1.17) translateX(-2%);filter:brightness(.91) saturate(.88)}
+  .aol-story-stage[data-step="3"] .aol-stage-image{transform:scale(1.04) translateX(-.3%);filter:brightness(.98) saturate(.85)}
   .aol-story-stage[data-step="3"] .aol-court-line{transform:scaleX(.76)}
-  .aol-story-stage[data-step="4"] .aol-stage-image{transform:scale(1.21) translateX(-3%);filter:brightness(1.02)}
+  .aol-story-stage[data-step="4"] .aol-stage-image{transform:scale(1.05) translateX(-.4%);filter:brightness(1) saturate(.88)}
   .aol-story-stage[data-step="4"] .aol-court-line{transform:scaleX(1)}
   .aol-tracks{padding:100px clamp(24px,7vw,105px);background:var(--cream2);color:var(--ink)}
   .aol-tracks-inner{max-width:1180px;margin:0 auto}.aol-tracks-head{max-width:650px;margin-bottom:43px}
@@ -484,15 +482,51 @@ footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;j
   footer{background:#0b120f;color:var(--ink3)}footer .footer-copy{color:rgba(243,239,230,.5)}footer .footer-links a{color:rgba(243,239,230,.65)}
   .gold-stripe{height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
   .motion-paused *, .motion-paused *::before, .motion-paused *::after{animation-play-state:paused!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
-  @keyframes aol-drift{from{transform:scale(1.01) translate3d(0,0,0)}to{transform:scale(1.07) translate3d(-1%,1%,0)}}
   @media(max-width:960px){.aol-track-grid{grid-template-columns:repeat(2,1fr)}.aol-track-card{border-bottom:1px solid var(--bdr-m);min-height:160px}.aol-track-card:nth-child(2n){border-right:0}.aol-track-card:last-child{border-bottom:0}.aol-track-card:nth-last-child(2){border-bottom:0}}
   @media(max-width:760px){nav.aol-nav{padding:13px 18px}.aol-nav .nav-links{display:none}.aol-hero{min-height:90svh}.aol-hero-media img,.aol-hero-media video{object-position:62% center}.aol-hero-shade{background:linear-gradient(90deg,rgba(8,15,12,.82),rgba(8,15,12,.36) 80%),linear-gradient(0deg,rgba(8,15,12,.66),transparent 56%)}.aol-hero-copy{padding:115px 22px 115px}.aol-hero h1{font-size:clamp(78px,20vw,132px)}.aol-hero-sub{max-width:350px;font-size:14px}.aol-stage-top{top:11%;left:8%;right:8%}.aol-stage-title{font-size:16vw}.aol-stage-count{font-size:11px}.aol-story-stage::after{inset:6% 3%}.aol-stage-caption{left:8%;bottom:21%;max-width:205px;font-size:9px}.aol-progress{left:8%;right:8%;bottom:11%}.aol-chapter{min-height:88svh;padding:95px 22px 125px;align-items:flex-end}.aol-chapter-copy{padding:20px;width:min(370px,100%)}.aol-chapter h2{font-size:53px}.aol-chapter p{font-size:13px}.aol-tracks{padding:80px 22px}.aol-track-grid{grid-template-columns:1fr}.aol-track-card,.aol-track-card:nth-child(2n),.aol-track-card:nth-last-child(2){border-right:0;border-bottom:1px solid var(--bdr-m);margin:0;min-height:0;padding:19px 0}.aol-track-no{margin-bottom:10px}.aol-track-card:last-child{border-bottom:0}.about-inner::after{display:none}}
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.aol-hero-media img{animation:none}.aol-hero-media video{display:none}.aol-stage-image,.aol-court-line{transition:none}.aol-motion-toggle{display:none}}
 </style>
+<style>
+  body.entry-locked{overflow:hidden}
+  #portal{justify-content:flex-start;cursor:default;background:linear-gradient(90deg,rgba(8,15,12,.82) 0%,rgba(8,15,12,.62) 42%,rgba(8,15,12,.12) 100%),linear-gradient(0deg,rgba(8,15,12,.48),transparent 45%),url("assets/next-season-hero.png") center 54%/cover no-repeat #101915;transition:opacity .85s ease}
+  #portal canvas{display:none}
+  #portal .portal-ui{width:min(680px,100%);margin-left:clamp(22px,7vw,110px);padding:24px;text-align:left;animation:riseIn 1s cubic-bezier(.2,.7,.2,1) both .15s}
+  #portal .portal-eyebrow{margin-bottom:20px;font-size:10px;letter-spacing:.3em}
+  #portal .portal-title{margin:0;color:#f3efe6;font-size:clamp(72px,12vw,154px);line-height:.82;letter-spacing:.015em;text-shadow:0 4px 40px rgba(0,0,0,.45)}
+  #portal .portal-sub{max-width:455px;margin:22px 0 30px;font-size:clamp(14px,1.6vw,17px)}
+  #portal .enter-btn{animation:none;border-radius:0;padding:16px 23px;background:var(--gold);color:#101915;font-size:11px;letter-spacing:.15em}
+  #portal .portal-hint{left:auto;right:clamp(22px,5vw,76px);bottom:26px;text-align:right;color:rgba(242,237,228,.66);font-size:9px;letter-spacing:.2em}
+  #portal.leaving{opacity:0;pointer-events:none}
+  .aol-hero-actions .btn-outline{white-space:normal}
+  .aol-entry-bridge{padding:90px 24px 82px;background:#101915;color:var(--ink);text-align:center;border-top:1px solid rgba(243,239,230,.12)}
+  .aol-entry-bridge-inner{width:min(800px,100%);margin:0 auto}
+  .aol-entry-bridge h2{font:400 clamp(46px,7vw,82px)/.9 'Bebas Neue',sans-serif;text-transform:uppercase;margin:16px 0;color:var(--ink)}
+  .aol-entry-bridge p{max-width:540px;margin:0 auto 26px;color:var(--ink3);font-size:14px;line-height:1.75}
+  .aol-founder-cue{display:inline-flex;align-items:center;gap:12px;padding:10px 0;color:var(--gold);text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid var(--gold-bdr);transition:color .2s ease,border-color .2s ease}
+  .aol-founder-cue:hover{color:var(--gold-l);border-color:var(--gold-l)}
+  .aol-founder-cue::after{content:"↓";font-size:18px;line-height:1;transition:transform .2s ease}
+  .aol-founder-cue:hover::after{transform:translateY(3px)}
+  .aol-welcome .btn-gold{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:14px 21px;border-radius:0;background:var(--gold);color:#101915;text-decoration:none;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+  .aol-welcome{padding:88px clamp(24px,7vw,105px);background:#18231e;color:var(--ink)}
+  .aol-welcome-inner{width:min(1180px,100%);margin:0 auto;display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,6vw,76px);align-items:center}
+  .aol-welcome h2{font:400 clamp(48px,6vw,78px)/.9 'Bebas Neue',sans-serif;text-transform:uppercase;margin:17px 0;color:var(--ink)}
+  .aol-welcome-copy>p:not(.section-eyebrow){max-width:450px;margin:0 0 24px;color:var(--ink3);font-size:14px;line-height:1.75}
+  .aol-welcome .loom-wrap{overflow:hidden;border:1px solid rgba(243,239,230,.18);box-shadow:0 18px 55px rgba(0,0,0,.28)}
+  @media(max-width:760px){#portal{background-position:62% center;background-image:linear-gradient(90deg,rgba(8,15,12,.82),rgba(8,15,12,.37) 82%),linear-gradient(0deg,rgba(8,15,12,.58),transparent 48%),url("assets/next-season-hero.png")}#portal .portal-ui{margin:0;padding:24px;width:min(550px,100%)}#portal .portal-title{font-size:clamp(76px,18vw,128px)}#portal .portal-sub{max-width:345px;font-size:14px}#portal .portal-hint{left:24px;right:24px;text-align:left}.aol-welcome-inner{grid-template-columns:1fr}.aol-welcome{padding:76px 22px}}
+  @media(prefers-reduced-motion:reduce){#portal{transition:none}#portal .portal-ui{animation:none}}
+</style>
 </head>
-<body class="portal-skip">
-<!-- The story begins on entry. No intro gate or forced click. -->
-<div id="hub" class="show">
+<body class="entry-locked">
+<div id="portal" role="region" aria-label="Athletes of Life entrance">
+  <div class="portal-ui">
+    <div class="portal-eyebrow">ATHLETES OF LIFE · THE NEXT SEASON</div>
+    <h1 class="portal-title">THE NEXT<br>SEASON</h1>
+    <p class="portal-sub">Your drive does not retire. Step into the next season and see what you can build with it.</p>
+    <button class="enter-btn" id="enterBtn" type="button">ENTER THE PLATFORM <span aria-hidden="true">→</span></button>
+  </div>
+  <div class="portal-hint">PRESS ENTER TO STEP IN</div>
+</div>
+<div id="hub" class="show" inert>
 
 
 <nav class="aol-nav" aria-label="Main navigation">
@@ -521,7 +555,7 @@ footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;j
 <section class="aol-hero" id="top" aria-labelledby="new-hero-title">
   <div class="aol-hero-media" aria-hidden="true">
     <img src="assets/next-season-hero.png" alt="" fetchpriority="high">
-    <video class="aol-hero-video" autoplay muted loop playsinline preload="auto" poster="assets/next-season-hero.png" aria-hidden="true">
+    <video class="aol-hero-video" muted loop playsinline preload="none" poster="assets/next-season-hero.png" aria-hidden="true">
       <source src="assets/next-season-loop.mp4" type="video/mp4">
     </video>
   </div>
@@ -532,7 +566,7 @@ footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;j
     <p class="aol-hero-sub" data-en="The game changes. Your drive carries forward. Turn the discipline, focus, and competitive edge you built in sport into a business and a life on your terms." data-es="El juego cambia. Tu impulso sigue adelante. Convierte la disciplina, el enfoque y la ventaja competitiva que desarrollaste en el deporte en un negocio y una vida en tus propios términos.">The game changes. Your drive carries forward. Turn the discipline, focus, and competitive edge you built in sport into a business and a life on your terms.</p>
     <div class="aol-hero-actions">
       <a href="/audit/" class="btn-gold" data-en="Start your free athlete audit →" data-es="Empieza tu diagnóstico gratis →">Start your free athlete audit →</a>
-      <a href="#story" class="btn-outline" data-en="Enter the story ↓" data-es="Entra en la historia ↓">Enter the story ↓</a>
+      <a href="#story" class="btn-outline" data-en="Scroll the story ↓" data-es="Recorre la historia ↓">Scroll the story ↓</a>
     </div>
   </div>
   <div class="aol-hero-foot"><span class="aol-scroll-cue" data-en="Scroll to begin" data-es="Desliza para comenzar">Scroll to begin</span><span>ATHLETES OF LIFE · 01 / 05</span></div>
@@ -578,6 +612,29 @@ footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;j
       <article class="aol-track-card"><span class="aol-track-no">03</span><h3 data-en="Products" data-es="Productos">Products</h3><p data-en="Create digital or physical products that solve a clear need." data-es="Crea productos digitales o físicos que resuelvan una necesidad clara.">Create digital or physical products that solve a clear need.</p></article>
       <article class="aol-track-card"><span class="aol-track-no">04</span><h3 data-en="Services" data-es="Servicios">Services</h3><p data-en="Build around a skill customers need and a service you can deliver." data-es="Construye alrededor de una habilidad que tus clientes necesitan y un servicio que puedes ofrecer.">Build around a skill customers need and a service you can deliver.</p></article>
       <article class="aol-track-card"><span class="aol-track-no">05</span><h3 data-en="Investment" data-es="Inversión">Investment</h3><p data-en="Learn the fundamentals of investing and long-term ownership." data-es="Aprende los fundamentos de la inversión y la propiedad a largo plazo.">Learn the fundamentals of investing and long-term ownership.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="aol-entry-bridge" aria-labelledby="aol-entry-title">
+  <div class="aol-entry-bridge-inner">
+    <p class="section-eyebrow" data-en="THE NEXT MOVE" data-es="EL SIGUIENTE PASO">THE NEXT MOVE</p>
+    <h2 id="aol-entry-title" data-en="You’ve seen the paths. Now hear from the founder." data-es="Ya viste los caminos. Ahora escucha al fundador.">You’ve seen the paths. Now hear from the founder.</h2>
+    <p data-en="Investment is one of five ways to build. Consider which path fits where you want to go next." data-es="La inversión es una de cinco formas de construir. Considera qué ruta encaja con lo que quieres lograr.">Investment is one of five ways to build. Consider which path fits where you want to go next.</p>
+    <a href="#welcome-video" class="aol-founder-cue" data-en="Watch the founder’s message" data-es="Ve el mensaje del fundador">Watch the founder’s message</a>
+  </div>
+</section>
+
+<section class="aol-welcome" id="welcome-video" aria-labelledby="aol-welcome-title">
+  <div class="aol-welcome-inner">
+    <div class="aol-welcome-copy">
+      <p class="section-eyebrow" data-en="A MESSAGE FROM ANTHONY" data-es="UN MENSAJE DE ANTHONY">A MESSAGE FROM ANTHONY</p>
+      <h2 id="aol-welcome-title" data-en="Before the next play." data-es="Antes de la siguiente jugada.">Before the next play.</h2>
+      <p data-en="I built this from 15 years of professional basketball around the world. Watch my welcome, then start with the free athlete audit." data-es="Construí esto después de 15 años de baloncesto profesional alrededor del mundo. Mira mi bienvenida y empieza con el diagnóstico gratis para atletas.">I built this from 15 years of professional basketball around the world. Watch my welcome, then start with the free athlete audit.</p>
+      <a href="/audit/" class="btn-gold" data-en="Start the Free Athlete Audit →" data-es="Empieza el Diagnóstico Gratis →">Start the Free Athlete Audit →</a>
+    </div>
+    <div class="loom-wrap">
+      <iframe title="Welcome message from Anthony" src="https://www.loom.com/embed/9ccfb1bc471645e48cb4eee2e18f83ae?hide_owner=true&amp;hide_share=true&amp;hide_title=true&amp;hideEmbedTopBar=true" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
 </section>
@@ -1069,5 +1126,31 @@ function toggleLang() {
 })();
 </script>
 </div>
+<script>
+(function(){
+  var portal=document.getElementById("portal");
+  var enterButton=document.getElementById("enterBtn");
+  var hub=document.getElementById("hub");
+  var heroVideo=document.querySelector(".aol-hero-video");
+  var entering=false;
+  if(!portal||!enterButton||!hub)return;
+  function enterPlatform(){
+    if(entering)return;
+    entering=true;
+    document.body.classList.remove("entry-locked");
+    hub.removeAttribute("inert");
+    window.scrollTo(0,0);
+    portal.classList.add("leaving");
+    if(heroVideo&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+      heroVideo.play().catch(function(){});
+    }
+    window.setTimeout(function(){if(portal.parentNode)portal.parentNode.removeChild(portal);},900);
+  }
+  enterButton.addEventListener("click",enterPlatform);
+  document.addEventListener("keydown",function(event){
+    if(event.key==="Enter"&&portal.isConnected&&!entering)enterPlatform();
+  });
+})();
+</script>
 </body>
 </html>
