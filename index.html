@@ -3,18 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Athletes of Life — Enter</title>
+<title>Athletes of Life — The Next Season</title>
+<meta name="description" content="Your drive does not retire. Athletes of Life helps current and former athletes turn their competitive edge into a business and a life built on their terms.">
+<link rel="canonical" href="https://athletesoflife.online/">
 
 <!-- Open Graph / Social Preview -->
-<meta property="og:title" content="Athletes of Life — Your Next Arena">
-<meta property="og:description" content="AI-powered business platform for athletes. Translate your discipline into income, purpose, and freedom. 4 Division Pathways, 5 Business Tracks, Free Audit.">
-<meta property="og:image" content="https://v3b.fal.media/files/b/0a9dee00/XnBk5yyq-W2Q6AR_EUq1g_mVTt5DJQ.png">
-<meta property="og:url" content="https://athletes-of-life-hub.netlify.app">
+<meta property="og:title" content="Athletes of Life — The Next Season">
+<meta property="og:description" content="The game changes. Your drive carries forward. Build your next season with Athletes of Life.">
+<meta property="og:image" content="https://athletesoflife.online/assets/athletes-of-life-share.jpg">
+<meta property="og:image:secure_url" content="https://athletesoflife.online/assets/athletes-of-life-share.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:image:alt" content="An anonymous athlete looks out across the ocean at sunrise from a coastal overlook.">
+<meta property="og:url" content="https://athletesoflife.online/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Athletes of Life — Your Next Arena">
-<meta name="twitter:description" content="AI-powered business platform for athletes. Translate your discipline into income, purpose, and freedom.">
-<meta name="twitter:image" content="https://v3b.fal.media/files/b/0a9dee00/XnBk5yyq-W2Q6AR_EUq1g_mVTt5DJQ.png">
+<meta name="twitter:title" content="Athletes of Life — The Next Season">
+<meta name="twitter:description" content="The game changes. Your drive carries forward. Build your next season with Athletes of Life.">
+<meta name="twitter:image" content="https://athletesoflife.online/assets/athletes-of-life-share.jpg">
+<meta name="twitter:image:alt" content="An anonymous athlete looks out across the ocean at sunrise from a coastal overlook.">
+<meta name="theme-color" content="#252420">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Athletes of Life">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400;1,9..40,600&display=swap" rel="stylesheet">
 <style>
@@ -393,39 +408,101 @@ footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;j
 .portal-skip #portal{display:none !important}
 .portal-skip #hub{display:block !important;opacity:1 !important;animation:none !important}
 </style>
+<style>
+  :root{--cream:#101915;--cream2:#18231e;--cream3:#28352e;--white:#1b2821;--gold:#d4a456;--gold-l:#e2c486;--gold-dim:rgba(212,164,86,.13);--gold-bdr:rgba(212,164,86,.34);--slate:#121c18;--slate2:#1a2620;--slate3:#24312a;--ink:#f3efe6;--ink2:#d9d9d1;--ink3:#b9c0b8;--ink4:#8c968e;--bdr:rgba(243,239,230,.12);--bdr-m:rgba(243,239,230,.2)}
+  body{background:var(--cream);color:var(--ink)}
+  #hub,#hub.show{display:block!important;opacity:1!important;animation:none!important}
+  nav.aol-nav{position:sticky;top:0;z-index:100;padding:15px clamp(18px,5vw,74px);background:rgba(16,25,21,.86);backdrop-filter:blur(16px);border-bottom:1px solid rgba(243,239,230,.13)}
+  .aol-nav .nav-logo{font-size:19px;letter-spacing:.16em;color:var(--ink)}
+  .aol-nav .nav-links{display:flex;gap:clamp(12px,2.2vw,30px)}
+  .aol-nav .nav-links a{color:rgba(243,239,230,.72);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+  .aol-nav .nav-links a:hover{color:var(--gold)}
+  .aol-nav .nav-cta{background:var(--gold);color:#121914!important;padding:10px 16px;border-radius:0;font-size:10px!important;letter-spacing:.12em;text-transform:uppercase}
+  .aol-nav #lang-toggle{border-color:rgba(243,239,230,.28)!important;color:var(--ink)!important;border-radius:0!important;padding:9px 12px!important}
+  .aol-hero,.aol-story{padding:0}
+  .aol-hero{min-height:min(92svh,980px);position:relative;display:flex;align-items:center;overflow:hidden;background:#101915;isolation:isolate}
+  .aol-hero-media,.aol-hero-shade{position:absolute;inset:0}
+  .aol-hero-media img,.aol-hero-media video{width:100%;height:100%;object-fit:cover;object-position:center 54%;filter:saturate(.86)}
+  .aol-hero-media img{animation:aol-drift 24s ease-in-out infinite alternate}
+  .aol-hero-media video{position:absolute;inset:0}
+  .aol-hero-shade{background:linear-gradient(90deg,rgba(8,15,12,.88),rgba(8,15,12,.63) 36%,rgba(8,15,12,.04) 83%),linear-gradient(0deg,rgba(8,15,12,.6),transparent 36%)}
+  .aol-hero-copy{position:relative;z-index:2;width:min(1240px,100%);margin:0 auto;padding:130px clamp(22px,6vw,84px) 112px}
+  .aol-eyebrow{font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:21px}
+  .aol-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(82px,14vw,184px);font-weight:400;line-height:.78;letter-spacing:-.015em;text-transform:uppercase;color:var(--ink);margin:0 0 28px}
+  .aol-hero h1 span{display:block;color:transparent;-webkit-text-stroke:1px rgba(243,239,230,.85)}
+  .aol-hero-sub{max-width:510px;margin:0 0 29px;color:rgba(243,239,230,.84);font-size:clamp(15px,1.6vw,19px);line-height:1.7}
+  .aol-hero-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .aol-hero-actions .btn-gold{border-radius:0;padding:15px 20px;font-size:10px;letter-spacing:.13em;text-transform:uppercase;background:var(--gold);color:#101915}
+  .aol-hero-actions .btn-outline{border-radius:0;border-color:rgba(243,239,230,.42);color:var(--ink);padding:14px 18px;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+  .aol-hero-foot{position:absolute;z-index:2;left:clamp(22px,5vw,76px);right:clamp(22px,5vw,76px);bottom:25px;display:flex;justify-content:space-between;align-items:center;color:rgba(243,239,230,.68);font-size:9px;letter-spacing:.2em;text-transform:uppercase}
+  .aol-scroll-cue{display:flex;align-items:center;gap:12px}.aol-scroll-cue::before{content:"";width:44px;height:1px;background:var(--gold)}
+  .aol-story{position:relative;background:#101915}
+  .aol-story-stage{height:100svh;position:sticky;top:0;margin-bottom:-100svh;overflow:hidden;isolation:isolate;background:#101915}
+  .aol-stage-image{position:absolute;inset:-2%;background:url("assets/next-season-hero.png") center 55%/cover no-repeat;filter:saturate(.8);transform:scale(1.02);transition:transform 1.4s cubic-bezier(.2,.7,.2,1),filter 1s}
+  .aol-story-stage::before{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,rgba(8,15,12,.84),rgba(8,15,12,.48) 50%,rgba(8,15,12,.17)),linear-gradient(0deg,rgba(8,15,12,.7),transparent 55%)}
+  .aol-story-stage::after{content:"";position:absolute;z-index:2;inset:7% 4%;border:1px solid rgba(243,239,230,.15);pointer-events:none}
+  .aol-stage-top{position:absolute;z-index:3;top:13%;left:clamp(34px,8vw,130px);right:clamp(34px,8vw,130px);display:flex;justify-content:space-between;align-items:flex-start}
+  .aol-stage-title{font:400 clamp(58px,10vw,138px)/.8 'Bebas Neue',sans-serif;letter-spacing:-.02em;text-transform:uppercase;color:rgba(243,239,230,.19);max-width:720px}
+  .aol-stage-title span{display:block}.aol-stage-count{font:400 13px 'Bebas Neue',sans-serif;letter-spacing:.16em;color:var(--gold)}
+  .aol-court-line{position:absolute;z-index:3;left:0;bottom:14%;width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform-origin:left;transform:scaleX(.2);transition:transform 1.2s cubic-bezier(.2,.7,.2,1);opacity:.8}
+  .aol-stage-caption{position:absolute;z-index:4;left:clamp(34px,8vw,130px);bottom:20%;max-width:320px;color:rgba(243,239,230,.78);font-size:11px;line-height:1.65;letter-spacing:.08em;text-transform:uppercase}
+  .aol-stage-caption strong{display:block;color:var(--gold);font-size:10px;letter-spacing:.23em;margin-bottom:8px}
+  .aol-progress{position:absolute;z-index:5;left:clamp(34px,8vw,130px);right:clamp(34px,8vw,130px);bottom:9%;height:1px;background:rgba(243,239,230,.25)}
+  .aol-progress span{display:block;width:100%;height:2px;background:var(--gold);transform:scaleX(.2);transform-origin:left;transition:transform .45s ease}
+  .aol-chapters{position:relative;z-index:6}.aol-chapter{min-height:96svh;display:flex;align-items:center;padding:110px clamp(26px,9vw,145px);scroll-margin-top:0}
+  .aol-chapter:nth-child(even){justify-content:flex-end}
+  .aol-chapter-copy{width:min(470px,100%);padding:25px 28px 28px;background:linear-gradient(115deg,rgba(12,19,16,.88),rgba(12,19,16,.58));border-left:1px solid var(--gold);backdrop-filter:blur(4px)}
+  .aol-chapter-no{font:400 13px 'Bebas Neue',sans-serif;letter-spacing:.18em;color:var(--gold)}
+  .aol-chapter h2{font:400 clamp(43px,6vw,76px)/.91 'Bebas Neue',sans-serif;text-transform:uppercase;margin:15px 0;letter-spacing:-.01em;color:var(--ink)}
+  .aol-chapter p{margin:0;color:rgba(243,239,230,.82);font-size:14px;line-height:1.75;max-width:395px}
+  .aol-story-stage[data-step="1"] .aol-stage-image{transform:scale(1.08) translateX(1%);filter:brightness(.76) saturate(.78)}
+  .aol-story-stage[data-step="1"] .aol-court-line{transform:scaleX(.38)}
+  .aol-story-stage[data-step="2"] .aol-stage-image{transform:scale(1.13) translateX(-1%);filter:brightness(.82) saturate(.82)}
+  .aol-story-stage[data-step="2"] .aol-court-line{transform:scaleX(.56)}
+  .aol-story-stage[data-step="3"] .aol-stage-image{transform:scale(1.17) translateX(-2%);filter:brightness(.91) saturate(.88)}
+  .aol-story-stage[data-step="3"] .aol-court-line{transform:scaleX(.76)}
+  .aol-story-stage[data-step="4"] .aol-stage-image{transform:scale(1.21) translateX(-3%);filter:brightness(1.02)}
+  .aol-story-stage[data-step="4"] .aol-court-line{transform:scaleX(1)}
+  .aol-tracks{padding:100px clamp(24px,7vw,105px);background:var(--cream2);color:var(--ink)}
+  .aol-tracks-inner{max-width:1180px;margin:0 auto}.aol-tracks-head{max-width:650px;margin-bottom:43px}
+  .aol-tracks h2{font:400 clamp(52px,7vw,92px)/.9 'Bebas Neue',sans-serif;text-transform:uppercase;margin:17px 0;color:var(--ink)}
+  .aol-tracks-intro{max-width:580px;color:var(--ink3);font-size:15px;line-height:1.75}
+  .aol-track-grid{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--bdr-m);border-bottom:1px solid var(--bdr-m)}
+  .aol-track-card{min-height:192px;padding:24px 18px 25px 0;margin-right:18px;border-right:1px solid var(--bdr-m)}
+  .aol-track-card:last-child{border-right:0;margin-right:0}.aol-track-no{display:block;font:400 14px 'Bebas Neue',sans-serif;color:var(--gold);margin-bottom:22px}
+  .aol-track-card h3{font:400 22px/1.05 'Bebas Neue',sans-serif;text-transform:uppercase;color:var(--ink);margin:0 0 10px}
+  .aol-track-card p{font-size:12px;line-height:1.65;color:var(--ink3);margin:0}
+  .aol-motion-toggle{position:fixed;z-index:120;right:18px;bottom:18px;width:42px;height:42px;border:1px solid rgba(243,239,230,.32);border-radius:50%;background:rgba(16,25,21,.86);color:var(--ink);cursor:pointer;font-size:13px}
+  #paths,#coaches{background:var(--cream2)}#mental-health{background:#121d18}#pricing{background:var(--cream)}#about{background:var(--cream2)}#contact{background:#121d18}
+  .lanes-grid,.coaches-grid,.pricing-grid{border-color:var(--bdr);background:var(--bdr);box-shadow:0 12px 36px rgba(0,0,0,.18)}
+  .lane-card,.coaches-card,.price-card,.form-wrap{background:var(--white);color:var(--ink)}
+  .lane-name,.coaches-card h3,.form-title,.form-success h3,.price-num,.price-tier,.about-content blockquote,.section-title{color:var(--ink)}
+  .lane-desc,.coaches-card p,.price-desc,.price-feats li,.about-content p{color:var(--ink3)}
+  .lane-img-overlay{background:linear-gradient(to top,var(--white),transparent)}
+  .about-inner .collage{display:none}.about-inner{grid-template-columns:minmax(0,1fr) minmax(260px,.65fr)}
+  .about-inner::after{content:"ATHLETES OF LIFE";font:400 clamp(54px,8vw,100px)/.85 'Bebas Neue',sans-serif;letter-spacing:.03em;color:rgba(243,239,230,.08);align-self:center}
+  footer{background:#0b120f;color:var(--ink3)}footer .footer-copy{color:rgba(243,239,230,.5)}footer .footer-links a{color:rgba(243,239,230,.65)}
+  .gold-stripe{height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  .motion-paused *, .motion-paused *::before, .motion-paused *::after{animation-play-state:paused!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+  @keyframes aol-drift{from{transform:scale(1.01) translate3d(0,0,0)}to{transform:scale(1.07) translate3d(-1%,1%,0)}}
+  @media(max-width:960px){.aol-track-grid{grid-template-columns:repeat(2,1fr)}.aol-track-card{border-bottom:1px solid var(--bdr-m);min-height:160px}.aol-track-card:nth-child(2n){border-right:0}.aol-track-card:last-child{border-bottom:0}.aol-track-card:nth-last-child(2){border-bottom:0}}
+  @media(max-width:760px){nav.aol-nav{padding:13px 18px}.aol-nav .nav-links{display:none}.aol-hero{min-height:90svh}.aol-hero-media img,.aol-hero-media video{object-position:62% center}.aol-hero-shade{background:linear-gradient(90deg,rgba(8,15,12,.82),rgba(8,15,12,.36) 80%),linear-gradient(0deg,rgba(8,15,12,.66),transparent 56%)}.aol-hero-copy{padding:115px 22px 115px}.aol-hero h1{font-size:clamp(78px,20vw,132px)}.aol-hero-sub{max-width:350px;font-size:14px}.aol-stage-top{top:11%;left:8%;right:8%}.aol-stage-title{font-size:16vw}.aol-stage-count{font-size:11px}.aol-story-stage::after{inset:6% 3%}.aol-stage-caption{left:8%;bottom:21%;max-width:205px;font-size:9px}.aol-progress{left:8%;right:8%;bottom:11%}.aol-chapter{min-height:88svh;padding:95px 22px 125px;align-items:flex-end}.aol-chapter-copy{padding:20px;width:min(370px,100%)}.aol-chapter h2{font-size:53px}.aol-chapter p{font-size:13px}.aol-tracks{padding:80px 22px}.aol-track-grid{grid-template-columns:1fr}.aol-track-card,.aol-track-card:nth-child(2n),.aol-track-card:nth-last-child(2){border-right:0;border-bottom:1px solid var(--bdr-m);margin:0;min-height:0;padding:19px 0}.aol-track-no{margin-bottom:10px}.aol-track-card:last-child{border-bottom:0}.about-inner::after{display:none}}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.aol-hero-media img{animation:none}.aol-hero-media video{display:none}.aol-stage-image,.aol-court-line{transition:none}.aol-motion-toggle{display:none}}
+</style>
 </head>
-<body>
-<!-- ============ ENTER PAGE ============ -->
-<div id="portal">
-  <canvas id="rim"></canvas>
-  <div class="portal-ui">
-    <div class="portal-eyebrow">Athletes of Life</div>
-    <div class="portal-title">YOUR NEXT<br>ARENA</div>
-    <p class="portal-sub">15 years of pro basketball around the world, encoded into a business platform that runs on AI. Step through.</p>
-    <button class="enter-btn" id="enterBtn">
-      Enter the Platform
-      <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M1 7h15M11 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
-  </div>
-  <div class="portal-hint">Take the shot — click anywhere to enter</div>
-</div>
-<div id="flash"></div>
-
-<!-- ============ HUB (flair demo) ============ -->
-<div id="flash"></div>
-<div id="hub">
+<body class="portal-skip">
+<!-- The story begins on entry. No intro gate or forced click. -->
+<div id="hub" class="show">
 
 
-<!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo">Athletes of Life</a>
+<nav class="aol-nav" aria-label="Main navigation">
+  <a href="#top" class="nav-logo">ATHLETES <span>OF LIFE</span></a>
   <ul class="nav-links">
-    <li><a href="#paths" data-en="Paths" data-es="Caminos">Paths</a></li>
-    <li><a href="#coaches" data-en="Coaches" data-es="Entrenadores">Coaches</a></li>
+    <li><a href="#story" data-en="The Story" data-es="La Historia">The Story</a></li>
+    <li><a href="#tracks" data-en="Business Tracks" data-es="Rutas de Negocio">Business Tracks</a></li>
+    <li><a href="#paths" data-en="Who It’s For" data-es="Para Quién">Who It’s For</a></li>
     <li><a href="#mental-health" data-en="Mind First" data-es="Mente Primero">Mind First</a></li>
-    <li><a href="#pricing" data-en="Pricing" data-es="Precios">Pricing</a></li>
-    <li><a href="#about" data-en="About" data-es="Acerca de">About</a></li>
-    <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
+    <li><a href="#about" data-en="About Anthony" data-es="Sobre Anthony">About Anthony</a></li>
   </ul>
   <div class="nav-actions">
     <button id="lang-toggle" onclick="toggleLang()" aria-label="Switch language"
@@ -436,39 +513,76 @@ footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;j
       <span id="lang-label">Español</span>
     </button>
     <a href="/audit/" class="nav-cta"
-       data-en="Take the Audit →" data-es="Toma el Diagnóstico →">Take the Audit →</a>
+       data-en="Free Athlete Audit →" data-es="Diagnóstico Gratis →">Free Athlete Audit →</a>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-left">
-    <p class="hero-eyebrow">Athletes of Life · Elev8ed Innovation</p>
-    <h1 class="hero-title" id="hero-title">YOUR <span>NEXT</span><br>SEASON<br>STARTS<br>HERE.</h1>
-    <p class="hero-sub" data-en="You've mastered the game. Now build the life. Athletes of Life gives athletes, trade workers, career changers, and business professionals the playbook to create income, purpose, and freedom — on their own terms." data-es="Dominaste el juego. Ahora construye la vida. Athletes of Life le da a atletas, trabajadores, emprendedores y profesionales el manual para crear ingresos, propósito y libertad — en sus propios términos.">You've mastered the game. Now build the life. Athletes of Life gives athletes, trade workers, career changers, and business professionals the playbook to create income, purpose, and freedom — on their own terms.</p>
-    <div class="hero-actions">
-      <a href="/audit/" class="btn-gold" data-en="Take the Free Audit →" data-es="Toma el Diagnóstico Gratis →">Take the Free Audit →</a>
-      <a href="#paths" class="btn-outline" data-en="See All Paths" data-es="Ver Todos los Caminos">See All Paths</a>
-    </div>
-    <div class="hero-stats">
-      <div><span class="stat-num">15</span><span class="stat-label" data-en="Years Pro Worldwide" data-es="Años Pro Mundial">Years Pro Worldwide</span></div>
-      <div><span class="stat-num">4</span><span class="stat-label" data-en="Division Pathways" data-es="Caminos de División">Division Pathways</span></div>
-      <div><span class="stat-num">5</span><span class="stat-label" data-en="Business Tracks" data-es="Rutas de Negocio">Business Tracks</span></div>
-      <div><span class="stat-num">AI</span><span class="stat-label" data-en="Powered Playbooks" data-es="Playbooks con IA">Powered Playbooks</span></div>
+<main>
+<section class="aol-hero" id="top" aria-labelledby="new-hero-title">
+  <div class="aol-hero-media" aria-hidden="true">
+    <img src="assets/next-season-hero.png" alt="" fetchpriority="high">
+    <video class="aol-hero-video" autoplay muted loop playsinline preload="auto" poster="assets/next-season-hero.png" aria-hidden="true">
+      <source src="assets/next-season-loop.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="aol-hero-shade" aria-hidden="true"></div>
+  <div class="aol-hero-copy">
+    <p class="aol-eyebrow" data-en="Built by an athlete · For what comes next" data-es="Creado por un atleta · Para lo que sigue">Built by an athlete · For what comes next</p>
+    <h1 id="new-hero-title"><span data-en="The Next" data-es="La Próxima">The Next</span><span data-en="Season" data-es="Temporada">Season</span></h1>
+    <p class="aol-hero-sub" data-en="The game changes. Your drive carries forward. Turn the discipline, focus, and competitive edge you built in sport into a business and a life on your terms." data-es="El juego cambia. Tu impulso sigue adelante. Convierte la disciplina, el enfoque y la ventaja competitiva que desarrollaste en el deporte en un negocio y una vida en tus propios términos.">The game changes. Your drive carries forward. Turn the discipline, focus, and competitive edge you built in sport into a business and a life on your terms.</p>
+    <div class="aol-hero-actions">
+      <a href="/audit/" class="btn-gold" data-en="Start your free athlete audit →" data-es="Empieza tu diagnóstico gratis →">Start your free athlete audit →</a>
+      <a href="#story" class="btn-outline" data-en="Enter the story ↓" data-es="Entra en la historia ↓">Enter the story ↓</a>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="vid-shell">
-      <div class="vid-header">
-        <div class="vid-dot"></div>
-        <span class="vid-label" data-en="A Message From Anthony" data-es="Un Mensaje de Anthony">A Message From Anthony</span>
-      </div>
-      <div class="loom-wrap">
-        <iframe src="https://www.loom.com/embed/9ccfb1bc471645e48cb4eee2e18f83ae?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>
-      </div>
-      <div class="vid-credit" id="vid-credit">Anthony · 15 years of professional basketball around the world · Founder, Athletes of Life</div>
+  <div class="aol-hero-foot"><span class="aol-scroll-cue" data-en="Scroll to begin" data-es="Desliza para comenzar">Scroll to begin</span><span>ATHLETES OF LIFE · 01 / 05</span></div>
+</section>
+
+<section class="aol-story" id="story" aria-label="The Next Season story">
+  <div class="aol-story-stage" id="aol-story-stage" data-step="0" aria-hidden="true">
+    <div class="aol-stage-image"></div>
+    <div class="aol-stage-top"><div class="aol-stage-title"><span data-en="THE NEXT" data-es="LO QUE SIGUE">THE NEXT</span><span data-en="SEASON" data-es="TEMPORADA">SEASON</span></div><div class="aol-stage-count" id="aol-stage-count">01 — 05</div></div>
+    <div class="aol-court-line"></div>
+    <div class="aol-stage-caption"><strong id="aol-stage-label">THE WHISTLE</strong><span id="aol-stage-note">The arena gets quiet. Your drive does not.</span></div>
+    <div class="aol-progress"><span id="aol-progress-line"></span></div>
+  </div>
+  <div class="aol-chapters">
+    <article class="aol-chapter" data-chapter="0">
+      <div class="aol-chapter-copy"><span class="aol-chapter-no" data-en="01 / THE WHISTLE" data-es="01 / EL SILBATO">01 / THE WHISTLE</span><h2 data-en="When one season ends." data-es="Cuando termina una temporada.">When one season ends.</h2><p data-en="The arena gets quiet. The routines change. But the part of you that learned to prepare, compete, and keep going is still there." data-es="La arena queda en silencio. Las rutinas cambian. Pero la parte de ti que aprendió a prepararse, competir y seguir adelante permanece.">The arena gets quiet. The routines change. But the part of you that learned to prepare, compete, and keep going is still there.</p></div>
+    </article>
+    <article class="aol-chapter" data-chapter="1">
+      <div class="aol-chapter-copy"><span class="aol-chapter-no" data-en="02 / WHAT TRAVELS" data-es="02 / LO QUE TE LLEVAS">02 / WHAT TRAVELS</span><h2 data-en="Your edge comes with you." data-es="Tu ventaja va contigo.">Your edge comes with you.</h2><p data-en="Discipline. Coachability. Resilience. A feel for the next move. Those skills can become the foundation for what you build next." data-es="Disciplina. Capacidad de aprender. Resiliencia. Instinto para la siguiente jugada. Esas habilidades pueden ser la base de lo que construyas después.">Discipline. Coachability. Resilience. A feel for the next move. Those skills can become the foundation for what you build next.</p></div>
+    </article>
+    <article class="aol-chapter" data-chapter="2">
+      <div class="aol-chapter-copy"><span class="aol-chapter-no" data-en="03 / CHOOSE YOUR ARENA" data-es="03 / ELIGE TU ARENA">03 / CHOOSE YOUR ARENA</span><h2 data-en="There is more than one path." data-es="Hay más de un camino.">There is more than one path.</h2><p data-en="Content. Coaching. Products. Services. Investing. Explore the models and find a direction that fits your starting point." data-es="Contenido. Coaching. Productos. Servicios. Inversión. Explora los modelos y encuentra una dirección que se ajuste a tu punto de partida.">Content. Coaching. Products. Services. Investing. Explore the models and find a direction that fits your starting point.</p></div>
+    </article>
+    <article class="aol-chapter" data-chapter="3">
+      <div class="aol-chapter-copy"><span class="aol-chapter-no" data-en="04 / BUILD THE PLAYBOOK" data-es="04 / CREA EL PLAN">04 / BUILD THE PLAYBOOK</span><h2 data-en="Turn the first move into a plan." data-es="Convierte la primera jugada en un plan.">Turn the first move into a plan.</h2><p data-en="Find a real need. Shape an offer. Learn from the people you want to serve. Build systems that make good work easier to repeat." data-es="Encuentra una necesidad real. Diseña una oferta. Aprende de las personas a quienes quieres servir. Crea sistemas que faciliten repetir el buen trabajo.">Find a real need. Shape an offer. Learn from the people you want to serve. Build systems that make good work easier to repeat.</p></div>
+    </article>
+    <article class="aol-chapter" data-chapter="4">
+      <div class="aol-chapter-copy"><span class="aol-chapter-no" data-en="05 / THE NEXT SEASON" data-es="05 / LA SIGUIENTE TEMPORADA">05 / THE NEXT SEASON</span><h2 data-en="The next chapter is yours." data-es="El siguiente capítulo es tuyo.">The next chapter is yours.</h2><p data-en="Bring your drive into a new arena. Choose one move, learn what it takes, and start building with intention." data-es="Lleva tu impulso a una nueva arena. Elige una jugada, aprende lo que requiere y empieza a construir con intención.">Bring your drive into a new arena. Choose one move, learn what it takes, and start building with intention.</p></div>
+    </article>
+  </div>
+</section>
+
+<section class="aol-tracks" id="tracks">
+  <div class="aol-tracks-inner">
+    <div class="aol-tracks-head">
+      <p class="section-eyebrow" data-en="Five Business Tracks" data-es="Cinco Rutas de Negocio">Five Business Tracks</p>
+      <h2 data-en="Choose your arena." data-es="Elige tu arena.">Choose your arena.</h2>
+      <p class="aol-tracks-intro" data-en="There is no single route for every athlete. Learn the fundamentals, test a direction, and build around the strengths you already bring." data-es="No existe una sola ruta para cada atleta. Aprende los fundamentos, prueba una dirección y construye desde las fortalezas que ya tienes.">There is no single route for every athlete. Learn the fundamentals, test a direction, and build around the strengths you already bring.</p>
+    </div>
+    <div class="aol-track-grid">
+      <article class="aol-track-card"><span class="aol-track-no">01</span><h3 data-en="Content" data-es="Contenido">Content</h3><p data-en="Build an audience around what you know, do, or stand for." data-es="Construye una audiencia alrededor de lo que sabes, haces o representas.">Build an audience around what you know, do, or stand for.</p></article>
+      <article class="aol-track-card"><span class="aol-track-no">02</span><h3 data-en="Coaching" data-es="Coaching">Coaching</h3><p data-en="Turn experience into guidance, training, or advisory work." data-es="Convierte tu experiencia en guía, entrenamiento o asesoría.">Turn experience into guidance, training, or advisory work.</p></article>
+      <article class="aol-track-card"><span class="aol-track-no">03</span><h3 data-en="Products" data-es="Productos">Products</h3><p data-en="Create digital or physical products that solve a clear need." data-es="Crea productos digitales o físicos que resuelvan una necesidad clara.">Create digital or physical products that solve a clear need.</p></article>
+      <article class="aol-track-card"><span class="aol-track-no">04</span><h3 data-en="Services" data-es="Servicios">Services</h3><p data-en="Build around a skill customers need and a service you can deliver." data-es="Construye alrededor de una habilidad que tus clientes necesitan y un servicio que puedes ofrecer.">Build around a skill customers need and a service you can deliver.</p></article>
+      <article class="aol-track-card"><span class="aol-track-no">05</span><h3 data-en="Investment" data-es="Inversión">Investment</h3><p data-en="Learn the fundamentals of investing and long-term ownership." data-es="Aprende los fundamentos de la inversión y la propiedad a largo plazo.">Learn the fundamentals of investing and long-term ownership.</p></article>
     </div>
   </div>
+</section>
+
+<div class="gold-stripe"></div>
 </section>
 
 <div class="gold-stripe"></div>
@@ -476,9 +590,9 @@ footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;j
 <!-- PATHS -->
 <section id="paths">
   <div class="section-header">
-    <p class="section-eyebrow" data-en="Choose Your Path" data-es="Elige Tu Camino">Choose Your Path</p>
-    <h2 class="section-title" data-en="EVERYONE HAS A LANE." data-es="TODOS TENEMOS UN CARRIL.">EVERYONE HAS A LANE.</h2>
-    <p class="section-sub" data-en="The discipline you built in sport applies to every arena in life. Find yours and build from there." data-es="La disciplina que construiste en el deporte aplica en cada arena de la vida. Encuentra la tuya y empieza a construir.">The discipline you built in sport applies to every arena in life. Find yours and build from there.</p>
+    <p class="section-eyebrow" data-en="Who We Serve" data-es="A Quién Servimos">Who We Serve</p>
+    <h2 class="section-title" data-en="A PATH FOR YOUR NEXT MOVE." data-es="UN CAMINO PARA TU SIGUIENTE JUGADA.">A PATH FOR YOUR NEXT MOVE.</h2>
+    <p class="section-sub" data-en="Our athlete pathway is live. Additional divisions are in development for the people and communities who build alongside athletes." data-es="Nuestra ruta para atletas ya está disponible. Estamos desarrollando divisiones adicionales para las personas y comunidades que construyen junto a ellos.">Our athlete pathway is live. Additional divisions are in development for the people and communities who build alongside athletes.</p>
   </div>
   <div class="lanes-grid">
     <div class="lane-card">
@@ -573,12 +687,12 @@ footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;j
       <h2 class="mental-section-title" id="mental-title">PERFORMANCE<br><span style="color:var(--gold-l);font-style:italic">STARTS IN<br>THE MIND.</span></h2>
       <p class="mental-sub" data-en="Mental health is not a weakness — it's the foundation every great performance is built on. Whether you're an athlete in competition, a high-performing executive under pressure, or navigating a major life transition, your mental game matters as much as anything else." data-es="La salud mental no es una debilidad — es la base sobre la que se construye cada gran rendimiento. Ya seas un atleta en competencia, un ejecutivo de alto rendimiento bajo presión, o alguien navegando una transición de vida importante, tu juego mental importa tanto como cualquier otra cosa.">Mental health is not a weakness — it's the foundation every great performance is built on. Whether you're an athlete in competition, a high-performing executive under pressure, or navigating a major life transition, your mental game matters as much as anything else.</p>
       <div class="mental-pills">
-        <span class="mental-pill">🏀 Active Athletes</span>
-        <span class="mental-pill">🏁 Post-Career Athletes</span>
-        <span class="mental-pill">💼 High-Performance Business</span>
-        <span class="mental-pill">🔄 Life Transitions</span>
-        <span class="mental-pill">👨‍👩‍👧 Families in Sport</span>
-        <span class="mental-pill">🎓 Student Athletes</span>
+        <span class="mental-pill" data-en="🏀 Active Athletes" data-es="🏀 Atletas Activos">🏀 Active Athletes</span>
+        <span class="mental-pill" data-en="🏁 Post-Career Athletes" data-es="🏁 Atletas Después del Deporte">🏁 Post-Career Athletes</span>
+        <span class="mental-pill" data-en="💼 High-Performance Business" data-es="💼 Negocios de Alto Rendimiento">💼 High-Performance Business</span>
+        <span class="mental-pill" data-en="🔄 Life Transitions" data-es="🔄 Transiciones de Vida">🔄 Life Transitions</span>
+        <span class="mental-pill" data-en="👨‍👩‍👧 Families in Sport" data-es="👨‍👩‍👧 Familias en el Deporte">👨‍👩‍👧 Families in Sport</span>
+        <span class="mental-pill" data-en="🎓 Student Athletes" data-es="🎓 Atletas Estudiantiles">🎓 Student Athletes</span>
       </div>
       <div class="mental-pillars">
         <div class="pillar"><div class="pillar-icon">🔥</div><h4 data-en="During Competition" data-es="Durante la Competencia">During Competition</h4><p data-en="Pressure, identity, performance anxiety. Tools to perform when it counts most." data-es="Presión, identidad, ansiedad. Herramientas para rendir cuando más importa.">Pressure, identity, performance anxiety. Tools to perform when it counts most.</p></div>
@@ -686,15 +800,15 @@ footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;j
       <div class="channels">
         <a href="mailto:hello@athletesoflife.online" class="ch-item">
           <div class="ch-icon ci-em">✉️</div>
-          <div><div style="font-size:12px;font-weight:600;color:var(--cream);margin-bottom:2px">Email</div><div>hello@athletesoflife.online</div></div>
+          <div><div style="font-size:12px;font-weight:600;color:var(--cream);margin-bottom:2px" data-en="Email" data-es="Correo">Email</div><div>hello@athletesoflife.online</div></div>
         </a>
         <a href="https://wa.me/523221973846" target="_blank" class="ch-item">
           <div class="ch-icon ci-wa">💬</div>
-          <div><div style="font-size:12px;font-weight:600;color:var(--cream);margin-bottom:2px">WhatsApp</div><div>+52 322 197 3846 · Message Anthony directly</div></div>
+          <div><div style="font-size:12px;font-weight:600;color:var(--cream);margin-bottom:2px">WhatsApp</div><div data-en="+52 322 197 3846 · Message Anthony directly" data-es="+52 322 197 3846 · Escríbele directamente a Anthony">+52 322 197 3846 · Message Anthony directly</div></div>
         </a>
         <a href="https://calendly.com/admin-peptbiohacking/athletes-of-life-strategy-call" target="_blank" class="ch-item">
           <div class="ch-icon ci-cal">📅</div>
-          <div><div style="font-size:12px;font-weight:600;color:var(--cream);margin-bottom:2px">Strategy Call</div><div>Book a free 30-min call on Calendly</div></div>
+          <div><div style="font-size:12px;font-weight:600;color:var(--cream);margin-bottom:2px" data-en="Strategy Call" data-es="Llamada Estratégica">Strategy Call</div><div data-en="Book a free 30-min call on Calendly" data-es="Agenda una llamada gratis de 30 min en Calendly">Book a free 30-min call on Calendly</div></div>
         </a>
       </div>
     </div>
@@ -735,15 +849,18 @@ footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;j
   </div>
 </section>
 
+</main>
 <footer>
   <div class="footer-brand">Athletes of Life</div>
-  <div class="footer-copy">Athletes of Life · Elev8ed Innovation LLC · Built by Anthony</div>
+  <div class="footer-copy" data-en="Athletes of Life · Elev8ed Innovation LLC · Built by Anthony" data-es="Athletes of Life · Elev8ed Innovation LLC · Creado por Anthony">Athletes of Life · Elev8ed Innovation LLC · Built by Anthony</div>
   <div class="footer-links">
-    <a href="/audit/">Take the Audit</a>
+    <a href="/audit/" data-en="Take the Audit" data-es="Haz el Diagnóstico">Take the Audit</a>
     <a href="https://wa.me/523221973846">WhatsApp</a>
     <a href="mailto:hello@athletesoflife.online">Email</a>
   </div>
 </footer>
+
+<button class="aol-motion-toggle" id="aol-motion-toggle" type="button" aria-label="Pause visual motion" aria-pressed="false" title="Pause visual motion">Ⅱ</button>
 
 <script>
 function handleSubmit(e){
@@ -860,7 +977,7 @@ function toggleLang() {
       intOpt: ['Selecciona un camino...','División Atletas — Carril Digital','División Atletas — Carril Estabilidad',
                'Ruta de Oficios','Vida Cotidiana / Transición','Era Dorada',
                'Alianza Coaches y Entrenadores','Mente Primero — Salud Mental',
-               'VIP Playbook ($99/mes)','Modelo Agéntico Personalizado','Solo explorando'],
+               'VIP Playbook ($49/mes)','Modelo Agéntico Personalizado','Solo explorando'],
       auditCta: 'Toma el Diagnóstico →'
     }
   }[currentLang];
@@ -889,6 +1006,7 @@ function toggleLang() {
 
   document.documentElement.lang = currentLang;
   updateAuditLinks();
+  if (window.updateStoryLang) window.updateStoryLang();
 }
 
 (function initializeLanguage() {
@@ -900,209 +1018,56 @@ function toggleLang() {
 })();
 </script>
 
-
+<script>
+(function(){
+  var stage=document.getElementById("aol-story-stage");
+  var chapters=Array.prototype.slice.call(document.querySelectorAll(".aol-chapter"));
+  var count=document.getElementById("aol-stage-count");
+  var label=document.getElementById("aol-stage-label");
+  var note=document.getElementById("aol-stage-note");
+  var progress=document.getElementById("aol-progress-line");
+  var toggle=document.getElementById("aol-motion-toggle");
+  var heroVideo=document.querySelector(".aol-hero-video");
+  var labelsEn=["THE WHISTLE","WHAT TRAVELS","CHOOSE YOUR ARENA","BUILD THE PLAYBOOK","THE NEXT SEASON"];
+  var labelsEs=["EL SILBATO","LO QUE TE LLEVAS","ELIGE TU ARENA","CREA EL PLAN","LA SIGUIENTE TEMPORADA"];
+  var notesEn=["The arena gets quiet. Your drive does not.","Your competitive edge can move with you.","Five routes. More than one way forward.","Turn the first move into a plan.","Your next chapter is yours to build."];
+  var notesEs=["La arena queda en silencio. Tu impulso no.","Tu ventaja competitiva puede acompañarte.","Cinco rutas. Más de una forma de avanzar.","Convierte la primera jugada en un plan.","Tú construyes el siguiente capítulo."];
+  var active=0;
+  if(!stage||!chapters.length)return;
+  function setActive(i){
+    active=i;
+    stage.setAttribute("data-step",String(i));
+    count.textContent=("0"+(i+1)).slice(-2)+" — 05";
+    var spanish=document.documentElement.lang==="es";
+    label.textContent=(spanish?labelsEs:labelsEn)[i];
+    note.textContent=(spanish?notesEs:notesEn)[i];
+    progress.style.transform="scaleX("+((i+1)/5)+")";
+  }
+  window.updateStoryLang=function(){setActive(active);};
+  if("IntersectionObserver" in window){
+    var observer=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){if(entry.isIntersecting)setActive(Number(entry.target.getAttribute("data-chapter")));});
+    },{root:null,rootMargin:"-42% 0px -42% 0px",threshold:0});
+    chapters.forEach(function(chapter){observer.observe(chapter);});
+  }
+  if(toggle){
+    toggle.addEventListener("click",function(){
+      var paused=document.body.classList.toggle("motion-paused");
+      if(heroVideo){if(paused)heroVideo.pause();else heroVideo.play().catch(function(){});}
+      toggle.setAttribute("aria-pressed",String(paused));
+      toggle.setAttribute("aria-label",paused?"Resume visual motion":"Pause visual motion");
+      toggle.title=paused?"Resume visual motion":"Pause visual motion";
+      toggle.textContent=paused?"▶":"Ⅱ";
+    });
+  }
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+    document.body.classList.add("motion-paused");
+    if(heroVideo)heroVideo.pause();
+    if(toggle){toggle.setAttribute("aria-pressed","true");toggle.textContent="▶";}
+  }
+  setActive(0);
+})();
+</script>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script>
-(function(){
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var portal = document.getElementById('portal');
-  var hub = document.getElementById('hub');
-  var flash = document.getElementById('flash');
-
-  /* ---------- skip portal on repeat visit this session ---------- */
-  var seen = false;
-  try { seen = sessionStorage.getItem('aol_entered') === '1'; } catch(e){}
-  if (seen) { portal.style.display = 'none'; hub.classList.add('show'); }
-
-  /* ---------- THE RIM: gold wireframe portal ---------- */
-  var GOLD = 0xC09040, CREAM = 0xF2EDE4;
-  var canvas = document.getElementById('rim');
-  var renderer, scene, camera, ball, ballMat, ballShell, stars, flying = false, flyT = 0;
-  var mouseX = 0, mouseY = 0;
-
-  function initPortal(){
-    if (seen || typeof THREE === 'undefined') return;
-    renderer = new THREE.WebGLRenderer({canvas:canvas, alpha:true, antialias:true});
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(60, 1, 0.1, 200);
-    camera.position.z = 14;
-
-    // THE BALL — one large wireframe basketball, floating and rotating center stage
-    ball = new THREE.Group();
-    ballMat = new THREE.LineBasicMaterial({color: GOLD, transparent:true, opacity:0.9});
-    function seamCircle(r, rx, ry, rz){
-      var pts = [];
-      for (var k = 0; k <= 96; k++){
-        var a = k/96*Math.PI*2;
-        pts.push(new THREE.Vector3(Math.cos(a)*r, Math.sin(a)*r, 0));
-      }
-      var loop = new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(pts), ballMat);
-      loop.rotation.set(rx, ry, rz);
-      return loop;
-    }
-    var br = 5.2;
-    ball.add(seamCircle(br, Math.PI/2, 0, 0));          // equator
-    ball.add(seamCircle(br, 0, 0, 0));                  // vertical seam
-    ball.add(seamCircle(br, 0, Math.PI/2, 0));          // perpendicular seam
-    ball.add(seamCircle(br, Math.PI/2, 0, Math.PI/4));  // curved seam 1
-    ball.add(seamCircle(br, Math.PI/2, 0, -Math.PI/4)); // curved seam 2
-    ballShell = new THREE.Mesh(
-      new THREE.SphereGeometry(br, 20, 14),
-      new THREE.MeshBasicMaterial({color: CREAM, wireframe:true, transparent:true, opacity:0.07})
-    );
-    ball.add(ballShell);
-    ball.position.set(0, 0, 0);
-    scene.add(ball);
-
-    // particle field — arena lights / court dust
-    var n = 900, pos = new Float32Array(n*3);
-    for (var p = 0; p < n; p++){
-      var rr = 7 + Math.random()*40;
-      var aa = Math.random()*Math.PI*2;
-      pos[p*3]   = Math.cos(aa)*rr;
-      pos[p*3+1] = (Math.random()-0.5)*30;
-      pos[p*3+2] = -Math.random()*80;
-    }
-    var g2 = new THREE.BufferGeometry();
-    g2.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-    stars = new THREE.Points(g2, new THREE.PointsMaterial({color: GOLD, size:0.09, transparent:true, opacity:0.7}));
-    scene.add(stars);
-
-    // particle field — arena lights / court dust
-    var n = 900, pos = new Float32Array(n*3);
-    for (var p = 0; p < n; p++){
-      var rr = 6 + Math.random()*40;
-      var aa = Math.random()*Math.PI*2;
-      pos[p*3]   = Math.cos(aa)*rr;
-      pos[p*3+1] = (Math.random()-0.5)*30;
-      pos[p*3+2] = -Math.random()*80;
-    }
-    var g2 = new THREE.BufferGeometry();
-    g2.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-    stars = new THREE.Points(g2, new THREE.PointsMaterial({color: GOLD, size:0.09, transparent:true, opacity:0.7}));
-    scene.add(stars);
-
-    resize();
-    window.addEventListener('resize', resize);
-    document.addEventListener('mousemove', function(e){
-      mouseX = (e.clientX / window.innerWidth - 0.5);
-      mouseY = (e.clientY / window.innerHeight - 0.5);
-    });
-    animate();
-  }
-
-  function resize(){
-    if(!renderer) return;
-    renderer.setSize(window.innerWidth, window.innerHeight, false);
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-  }
-
-  function animate(){
-    requestAnimationFrame(animate);
-    var t = performance.now() * 0.001;
-    if(!reduced && !flying){
-      ball.rotation.y += 0.004;                       // slow spin
-      ball.rotation.x = 0.25 + Math.sin(t*0.4)*0.05;  // gentle tilt wobble
-      ball.position.y = Math.sin(t*0.6)*0.4;          // floating drift
-      stars.rotation.z += 0.0004;
-    }
-    if (flying){
-      flyT += 0.016;
-      var e = flyT*flyT*1.7;                          // ease-in acceleration
-      camera.position.z = 14 - e*20;                  // fly straight through the ball
-      stars.position.z += 0.55;                       // streak past
-      ball.rotation.y += 0.02;                        // ball spins up as you pass through
-      ballMat.opacity = Math.max(0, 0.9 - flyT*1.1);
-      ballShell.material.opacity = Math.max(0, 0.07 - flyT*0.15);
-      if (camera.position.z <= -6) finishFly();
-    } else {
-      camera.position.x += (mouseX*1.6 - camera.position.x)*0.05;
-      camera.position.y += (-mouseY*1.2 - camera.position.y)*0.05;
-      camera.lookAt(0,0,0);
-    }
-    renderer.render(scene, camera);
-  }
-
-  function enter(){
-    if (flying) return;
-    try { sessionStorage.setItem('aol_entered','1'); } catch(e){}
-    if (reduced || !renderer){ finishFly(); return; }
-    flying = true;
-    flash.classList.add('on');     // cream flash builds as you pass through
-  }
-
-  function finishFly(){
-    portal.classList.add('leaving');
-    hub.classList.add('show');
-    setTimeout(function(){
-      portal.style.display = 'none';
-      flash.classList.remove('on');
-    }, 700);
-  }
-
-  portal.addEventListener('click', enter);
-  document.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' ') enter(); });
-  initPortal();
-
-  /* ---------- HUB FLAIR 1: ambient gold drift in hero ---------- */
-  var dc = document.getElementById('drift'), dctx = dc.getContext('2d'), dots = [];
-  function driftResize(){ dc.width = dc.offsetWidth; dc.height = dc.offsetHeight; }
-  function driftInit(){
-    driftResize();
-    dots = [];
-    for (var i=0;i<42;i++){
-      dots.push({x:Math.random()*dc.width, y:Math.random()*dc.height,
-                 r:Math.random()*2.2+0.6, vx:(Math.random()-0.5)*0.25, vy:(Math.random()-0.5)*0.2,
-                 o:Math.random()*0.35+0.1});
-    }
-  }
-  function driftLoop(){
-    if (reduced) return;
-    dctx.clearRect(0,0,dc.width,dc.height);
-    dots.forEach(function(d){
-      d.x+=d.vx; d.y+=d.vy;
-      if(d.x<0)d.x=dc.width; if(d.x>dc.width)d.x=0;
-      if(d.y<0)d.y=dc.height; if(d.y>dc.height)d.y=0;
-      dctx.beginPath(); dctx.arc(d.x,d.y,d.r,0,Math.PI*2);
-      dctx.fillStyle='rgba(192,144,64,'+d.o+')'; dctx.fill();
-    });
-    requestAnimationFrame(driftLoop);
-  }
-  window.addEventListener('resize', driftInit);
-  driftInit(); driftLoop();
-
-  /* ---------- HUB FLAIR 2: 3D tilt cards ---------- */
-  document.querySelectorAll('.tilt-card').forEach(function(card){
-    card.addEventListener('mousemove', function(e){
-      if (reduced) return;
-      var r = card.getBoundingClientRect();
-      var px = (e.clientX - r.left)/r.width, py = (e.clientY - r.top)/r.height;
-      card.style.setProperty('--mx', (px*100)+'%');
-      card.style.setProperty('--my', (py*100)+'%');
-      card.style.transform = 'rotateY('+((px-0.5)*10)+'deg) rotateX('+((0.5-py)*8)+'deg) translateY(-4px)';
-    });
-    card.addEventListener('mouseleave', function(){ card.style.transform=''; });
-  });
-
-  /* ---------- HUB FLAIR 3: scroll reveals ---------- */
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
-  }, {threshold:0.15});
-  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
-})();
-</script>
-<script>
-(function(){
-  try {
-    if (sessionStorage.getItem('aol_entered') === '1') {
-      document.body.classList.add('portal-skip');
-      document.getElementById('hub').classList.add('show');
-    }
-  } catch(e){}
-})();
-</script>
 </body>
 </html>
