@@ -544,9 +544,12 @@ footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;j
   @media(max-height:680px) and (max-width:760px){#portal .portal-ui{padding-top:82px}#portal .portal-title{font-size:54px}#portal .portal-sub{margin:12px 0 16px}#portal .portal-hint{bottom:14px}}
   @media(prefers-reduced-motion:reduce){#portal{transition:none}#portal .portal-ui{animation:none}#portal::after{display:none}}
 </style>
+<link rel="stylesheet" href="assets/entry-video.css">
 </head>
 <body class="entry-locked">
 <div id="portal" role="region" aria-label="Athletes of Life entrance">
+  <div class="portal-video-stage" aria-hidden="true"><video id="portal-video" muted loop playsinline preload="metadata" poster="assets/entry-video-poster.jpg" disablepictureinpicture></video></div>
+  <button id="portal-video-toggle" class="portal-video-toggle" type="button" aria-label="Play entrance video">▶</button>
   <button class="portal-language-toggle" id="portal-lang-toggle" type="button" onclick="toggleLang()" aria-label="Switch language"><span id="portal-lang-label">Español</span></button>
   <div class="portal-ui">
     <div class="portal-eyebrow" data-en="BUILT BY AN ATHLETE · FOR WHAT COMES NEXT" data-es="CREADO POR UN ATLETA · PARA LO QUE SIGUE">BUILT BY AN ATHLETE · FOR WHAT COMES NEXT</div>
@@ -1221,5 +1224,6 @@ function toggleLang() {
   });
 })();
 </script>
+<script src="assets/entry-video.js"></script>
 </body>
 </html>

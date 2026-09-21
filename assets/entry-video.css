@@ -1,0 +1,17 @@
+/* Entrance video and responsive founder copy. */
+#portal{background:#101915}
+.portal-video-stage{position:absolute;inset:0;overflow:hidden;background:url('entry-video-poster.jpg') 58% center/cover no-repeat}
+.portal-video-stage video{display:block;width:100%;height:100%;object-fit:cover;object-position:58% center;transform:none;animation:none}
+.portal-video-stage::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,15,12,.78),rgba(8,15,12,.35) 48%,rgba(8,15,12,.06)),linear-gradient(0deg,rgba(8,15,12,.4),transparent 45%);pointer-events:none}
+#portal .portal-video-toggle{position:absolute;z-index:3;bottom:max(20px,env(safe-area-inset-bottom));left:26px;width:44px;height:44px;border:1px solid rgba(243,239,230,.5);border-radius:50%;background:rgba(8,15,12,.7);color:#f3efe6;cursor:pointer;font-size:16px}
+#portal .portal-video-toggle:focus-visible{outline:2px solid #d4a456;outline-offset:4px}
+@media(max-width:760px){
+  #portal .portal-video-toggle{left:auto;right:18px}
+  .portal-video-stage::after{background:linear-gradient(180deg,rgba(8,15,12,.73),rgba(8,15,12,.3) 44%,rgba(8,15,12,.06) 72%,rgba(8,15,12,.35))}
+  #about .about-inner{grid-template-columns:minmax(0,1fr);gap:0}
+  #about .about-content{min-width:0;width:100%}
+  #about .about-content p{max-width:100%}
+  #about .about-content blockquote{font-size:clamp(26px,6.8vw,36px);line-height:1.2;padding-left:16px}
+  #about .about-cred{display:block;line-height:1.6}
+  #about .btn-gold{max-width:100%;text-align:center}
+}
