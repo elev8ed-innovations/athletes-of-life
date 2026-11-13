@@ -1,0 +1,5 @@
+const {test}=require('node:test');const assert=require('node:assert/strict');
+process.env.ANTHROPIC_API_KEY='test';process.env.RESEND_API_KEY='test';
+const audit=require('../netlify/functions/send-audit');
+test('AI failure returns retryable error without templated report or email',async()=>{let sends=0;audit._setClientsForTest({anthropic:{messages:{create:async()=>{throw new Error('Provider unavailable')}}},resend:{emails:{send:async()=>{sends++;return {data:{id:'unexpected'}}}}}});const r=await audit.handler({httpMethod:'POST',body:JSON.stringify({name:'Test',sport:'Basketball',email:'test@example.com',income:'none',scores:[5,5,5,5,5],language:'en',goals:'Youth coaching',obstacle:'No venue',success90:'One pilot clinic'})});assert.equal(r.statusCode,503);assert.equal(JSON.parse(r.body).generatedByAi,false);assert.equal(JSON.parse(r.body).audit,undefined);assert.equal(sends,0)});
+test('null request body is rejected cleanly',async()=>{const r=await audit.handler({httpMethod:'POST',body:'null'});assert.equal(r.statusCode,400)});

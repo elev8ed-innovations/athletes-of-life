@@ -6,6 +6,8 @@
 <title>Athletes of Life | Business Readiness Audit</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.loom.com">
+<link rel="preconnect" href="https://cdn.loom.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -129,11 +131,41 @@
     border: 1px solid #2a2a2a;
     background: #111;
   }
+  .video-wrapper::before {
+    content: "Loading Anthony's welcome…";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: grid;
+    place-items: center;
+    color: #888;
+    font-size: 13px;
+    letter-spacing: .04em;
+  }
+  .video-wrapper::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    width: 22px;
+    height: 22px;
+    margin: -42px 0 0 -11px;
+    border: 2px solid rgba(201,168,76,.25);
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: videoLoadSpin .9s linear infinite;
+  }
+  .video-wrapper.video-loaded::before,
+  .video-wrapper.video-loaded::after { opacity: 0; pointer-events: none; }
+  .welcome-video-embed::before { content: "Loading your follow-up…"; }
+  @keyframes videoLoadSpin { to { transform: rotate(360deg); } }
   .video-wrapper iframe {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
     border: 0;
+    z-index: 1;
   }
   .video-credit {
     text-align: center;
@@ -829,24 +861,25 @@
   }
   .hidden { display: none !important; }
 </style>
-</head>
+<link rel="stylesheet" href="/assistant.css">
+<link rel="stylesheet" href="/visual-polish.css"></head>
 <body>
 
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track" id="tickerTrack">
-    <span data-en="🏀 DII Guard — Content + Brand Deals — $2,400/mo" data-es="🏀 Guardia DII — Contenido + Alianzas de Marca — $2,400/mes">🏀 DII Guard — Content + Brand Deals — $2,400/mo</span>
-    <span data-en="⚽ College Midfielder — Youth Coaching — $1,800/mo" data-es="⚽ Mediocampista Universitario — Coaching Juvenil — $1,800/mes">⚽ College Midfielder — Youth Coaching — $1,800/mo</span>
-    <span data-en="🏈 Former D1 WR — AI Automation + NIL Pipeline — $6,500/mo" data-es="🏈 Exreceptor D1 — Automatización con IA + Pipeline de NIL — $6,500/mes">🏈 Former D1 WR — AI Automation + NIL Pipeline — $6,500/mo</span>
-    <span data-en="🎾 Pro Tennis — Digital Products — $3,200/mo" data-es="🎾 Tenis Profesional — Productos Digitales — $3,200/mes">🎾 Pro Tennis — Digital Products — $3,200/mo</span>
-    <span data-en="🏊 Olympic Hopeful — Coaching Track — $2,100/mo" data-es="🏊 Aspirante Olímpico — Ruta de Coaching — $2,100/mes">🏊 Olympic Hopeful — Coaching Track — $2,100/mo</span>
-    <span data-en="🏐 NAIA Volleyball — E-commerce Store — $1,400/mo" data-es="🏐 Voleibol NAIA — Tienda de Comercio Electrónico — $1,400/mes">🏐 NAIA Volleyball — E-commerce Store — $1,400/mo</span>
-    <span data-en="🏀 DII Guard — Content + Brand Deals — $2,400/mo" data-es="🏀 Guardia DII — Contenido + Alianzas de Marca — $2,400/mes">🏀 DII Guard — Content + Brand Deals — $2,400/mo</span>
-    <span data-en="⚽ College Midfielder — Youth Coaching — $1,800/mo" data-es="⚽ Mediocampista Universitario — Coaching Juvenil — $1,800/mes">⚽ College Midfielder — Youth Coaching — $1,800/mo</span>
-    <span data-en="🏈 Former D1 WR — AI Automation + NIL Pipeline — $6,500/mo" data-es="🏈 Exreceptor D1 — Automatización con IA + Pipeline de NIL — $6,500/mes">🏈 Former D1 WR — AI Automation + NIL Pipeline — $6,500/mo</span>
-    <span data-en="🎾 Pro Tennis — Digital Products — $3,200/mo" data-es="🎾 Tenis Profesional — Productos Digitales — $3,200/mes">🎾 Pro Tennis — Digital Products — $3,200/mo</span>
-    <span data-en="🏊 Olympic Hopeful — Coaching Track — $2,100/mo" data-es="🏊 Aspirante Olímpico — Ruta de Coaching — $2,100/mes">🏊 Olympic Hopeful — Coaching Track — $2,100/mo</span>
-    <span data-en="🏐 NAIA Volleyball — E-commerce Store — $1,400/mo" data-es="🏐 Voleibol NAIA — Tienda de Comercio Electrónico — $1,400/mes">🏐 NAIA Volleyball — E-commerce Store — $1,400/mo</span>
+    <span data-en="DII Guard — Content + Brand Deals — $2,400/mo" data-es="Guardia DII — Contenido + Alianzas de Marca — $2,400/mes">DII Guard — Content + Brand Deals — $2,400/mo</span>
+    <span data-en="College Midfielder — Youth Coaching — $1,800/mo" data-es="Mediocampista Universitario — Coaching Juvenil — $1,800/mes">College Midfielder — Youth Coaching — $1,800/mo</span>
+    <span data-en="Former D1 WR — AI Automation + NIL Pipeline — $6,500/mo" data-es="Exreceptor D1 — Automatización con IA + Pipeline de NIL — $6,500/mes">Former D1 WR — AI Automation + NIL Pipeline — $6,500/mo</span>
+    <span data-en="Pro Tennis — Digital Products — $3,200/mo" data-es="Tenis Profesional — Productos Digitales — $3,200/mes">Pro Tennis — Digital Products — $3,200/mo</span>
+    <span data-en="Olympic Hopeful — Coaching Track — $2,100/mo" data-es="Aspirante Olímpico — Ruta de Coaching — $2,100/mes">Olympic Hopeful — Coaching Track — $2,100/mo</span>
+    <span data-en="NAIA Volleyball — E-commerce Store — $1,400/mo" data-es="Voleibol NAIA — Tienda de Comercio Electrónico — $1,400/mes">NAIA Volleyball — E-commerce Store — $1,400/mo</span>
+    <span data-en="DII Guard — Content + Brand Deals — $2,400/mo" data-es="Guardia DII — Contenido + Alianzas de Marca — $2,400/mes">DII Guard — Content + Brand Deals — $2,400/mo</span>
+    <span data-en="College Midfielder — Youth Coaching — $1,800/mo" data-es="Mediocampista Universitario — Coaching Juvenil — $1,800/mes">College Midfielder — Youth Coaching — $1,800/mo</span>
+    <span data-en="Former D1 WR — AI Automation + NIL Pipeline — $6,500/mo" data-es="Exreceptor D1 — Automatización con IA + Pipeline de NIL — $6,500/mes">Former D1 WR — AI Automation + NIL Pipeline — $6,500/mo</span>
+    <span data-en="Pro Tennis — Digital Products — $3,200/mo" data-es="Tenis Profesional — Productos Digitales — $3,200/mes">Pro Tennis — Digital Products — $3,200/mo</span>
+    <span data-en="Olympic Hopeful — Coaching Track — $2,100/mo" data-es="Aspirante Olímpico — Ruta de Coaching — $2,100/mes">Olympic Hopeful — Coaching Track — $2,100/mo</span>
+    <span data-en="NAIA Volleyball — E-commerce Store — $1,400/mo" data-es="Voleibol NAIA — Tienda de Comercio Electrónico — $1,400/mes">NAIA Volleyball — E-commerce Store — $1,400/mo</span>
   </div>
 </div>
 
@@ -869,11 +902,15 @@
 
   <div class="video-section">
     <div class="video-label" data-en="Built by Anthony — 15 years of pro basketball around the world" data-es="Creado por Anthony — 15 años de baloncesto profesional alrededor del mundo">Built by Anthony — 15 years of pro basketball around the world</div>
-    <div class="video-wrapper">
+    <div class="video-wrapper" aria-busy="true">
       <iframe
-        src="https://www.loom.com/embed/9ccfb1bc471645e48cb4eee2e18f83ae"
+        title="Welcome message from Anthony"
+        src="https://www.loom.com/embed/9ccfb1bc471645e48cb4eee2e18f83ae?hide_owner=true&amp;hide_share=true&amp;hide_title=true&amp;hideEmbedTopBar=true"
         allowfullscreen
-        allow="autoplay; fullscreen">
+        allow="autoplay; fullscreen"
+        loading="eager"
+        fetchpriority="high"
+        referrerpolicy="origin">
       </iframe>
     </div>
   </div>
@@ -884,21 +921,21 @@
 
     <div class="who-buttons">
       <button class="who-btn" onclick="go('step1')">
-        <span class="who-icon">🎓</span>
+        <span class="who-icon"><svg class="aol-line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 21v-3a7 7 0 0 1 14 0v3M3 3h5m8 0h5"/></svg></span>
         <div class="who-text">
           <strong data-en="Student Athlete" data-es="Estudiante atleta">Student Athlete</strong>
           <span data-en="Currently competing in college, high school, or club sports" data-es="Compites actualmente en universidad, preparatoria o un club deportivo">Currently competing in college, high school, or club sports</span>
         </div>
       </button>
       <button class="who-btn" onclick="go('step1')">
-        <span class="who-icon">🏆</span>
+        <span class="who-icon"><svg class="aol-line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 21v-3a7 7 0 0 1 14 0v3M3 3h5m8 0h5"/></svg></span>
         <div class="who-text">
           <strong data-en="Pro Athlete Transitioning" data-es="Atleta profesional en transición">Pro Athlete Transitioning</strong>
           <span data-en="Professional career winding down, building what is next" data-es="Tu carrera profesional está terminando y estás construyendo lo que sigue">Professional career winding down, building what is next</span>
         </div>
       </button>
       <button class="who-btn" onclick="go('step1')">
-        <span class="who-icon">🧭</span>
+        <span class="who-icon"><svg class="aol-line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 21v-3a7 7 0 0 1 14 0v3M3 3h5m8 0h5"/></svg></span>
         <div class="who-text">
           <strong data-en="Former Athlete" data-es="Exatleta">Former Athlete</strong>
           <span data-en="Done competing, ready to monetize my athletic identity" data-es="Terminaste de competir y quieres convertir tu identidad deportiva en ingresos">Done competing, ready to monetize my athletic identity</span>
@@ -909,21 +946,21 @@
 
   <div class="proof-cards">
     <div class="proof-card">
-      <div class="sport">🏀</div>
+      <div class="sport"><svg class="aol-line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-5 4-5 14 0 18m0-18c5 4 5 14 0 18"/></svg></div>
       <div class="athlete">DII Guard, Midwest Conference</div>
       <div class="track">Content Creation + Brand Deals</div>
       <div class="income">$2,400<span style="font-size:14px;color:#555">/mo</span></div>
       <div class="income-label" data-en="Monthly recurring" data-es="Ingreso recurrente mensual">Monthly recurring</div>
     </div>
     <div class="proof-card">
-      <div class="sport">⚽</div>
+      <div class="sport"><svg class="aol-line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-5 4-5 14 0 18m0-18c5 4 5 14 0 18"/></svg></div>
       <div class="athlete">College Midfielder, NAIA</div>
       <div class="track">Coaching Track — Youth Training</div>
       <div class="income">$1,800<span style="font-size:14px;color:#555">/mo</span></div>
       <div class="income-label" data-en="Monthly recurring" data-es="Ingreso recurrente mensual">Monthly recurring</div>
     </div>
     <div class="proof-card">
-      <div class="sport">🏈</div>
+      <div class="sport"><svg class="aol-line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-5 4-5 14 0 18m0-18c5 4 5 14 0 18"/></svg></div>
       <div class="athlete">Former D1 Wide Receiver</div>
       <div class="track">Platinum Execution</div>
       <div class="income">$6,500<span style="font-size:14px;color:#555">/mo</span></div>
@@ -958,7 +995,7 @@
     <div class="progress-bar"><div class="progress-fill" style="width:25%"></div></div>
     <div class="step-label" data-en="Step 1 of 4" data-es="Paso 1 de 4">Step 1 of 4</div>
     <h2 data-en="Tell me about your game." data-es="Cuéntame sobre tu trayectoria deportiva.">Tell me about your game.</h2>
-    <p class="screen-sub" data-en="Three quick fields to sharpen your audit." data-es="Tres datos rápidos para personalizar tu diagnóstico.">Three quick fields to sharpen your audit.</p>
+    <p class="screen-sub" data-en="Your starting point, your goals, your next chapter." data-es="Tu punto de partida, tus metas, tu siguiente etapa.">Your starting point, your goals, your next chapter.</p>
 
     <div class="field">
       <label data-en="Your Name" data-es="Tu nombre">Your Name</label>
@@ -980,7 +1017,7 @@
         <option value="post" data-en="Post-sport, rebuilding income" data-es="Después del deporte, reconstruyendo ingresos">Post-sport, rebuilding income</option>
       </select>
     </div>
-    <p class="error-msg" id="err-step1" data-en="Please fill out all fields." data-es="Completa todos los campos.">Please fill out all fields.</p>
+    <div class="field"><label for="f-goals" data-en="What would you like to build?" data-es="¿Qué te gustaría construir?">What would you like to build?</label><textarea id="f-goals" maxlength="800" rows="3" style="width:100%;background:#151515;color:#eee;border:1px solid #444;border-radius:12px;padding:14px;font:inherit"></textarea></div><div class="field"><label for="f-obstacle" data-en="What is holding you back?" data-es="¿Qué te está frenando?">What is holding you back?</label><textarea id="f-obstacle" maxlength="800" rows="3" style="width:100%;background:#151515;color:#eee;border:1px solid #444;border-radius:12px;padding:14px;font:inherit"></textarea></div><div class="field"><label for="f-success90" data-en="What would success look like in 90 days?" data-es="¿Cómo se vería el éxito en 90 días?">What would success look like in 90 days?</label><textarea id="f-success90" maxlength="800" rows="3" style="width:100%;background:#151515;color:#eee;border:1px solid #444;border-radius:12px;padding:14px;font:inherit"></textarea></div><p class="error-msg" id="err-step1" data-en="Please fill out all fields." data-es="Completa todos los campos.">Please fill out all fields.</p>
 
     <div class="btn-row">
       <button class="btn-back" onclick="go('home')" data-en="← Back" data-es="← Atrás">← Back</button>
@@ -1066,12 +1103,12 @@
     <div class="progress-bar"><div class="progress-fill" style="width:75%"></div></div>
     <div class="step-label" data-en="Step 3 of 4" data-es="Paso 3 de 4">Step 3 of 4</div>
     <h2 data-en="Where do we send your audit?" data-es="¿A dónde enviamos tu diagnóstico?">Where do we send your audit?</h2>
-    <p class="screen-sub" data-en="Your score, best track, and three concrete moves — in your inbox in minutes." data-es="Tu puntuación, tu mejor ruta y tres acciones concretas llegarán a tu correo en minutos.">Your score, best track, and three concrete moves — in your inbox in minutes.</p>
+    <p class="screen-sub" data-en="Get your score, suggested track, and three practical next moves on this page and by email." data-es="Recibe tu puntuación, ruta sugerida y tres acciones en esta página y por correo.">Get your score, suggested track, and three practical next moves on this page and by email.</p>
 
     <div class="field">
       <label data-en="Email Address" data-es="Correo electrónico">Email Address</label>
       <input type="email" id="f-email" placeholder="your@email.com" data-en-placeholder="your@email.com" data-es-placeholder="tu@correo.com">
-      <p style="font-size:12px;color:#555;margin-top:6px;" data-en="No spam. Used to generate and send your audit only." data-es="Sin spam. Solo usamos tu correo para generar y enviar tu diagnóstico.">No spam. Used to generate and send your audit only.</p>
+      <p style="font-size:12px;color:#555;margin-top:6px;" data-en="Your email is used to send your audit." data-es="Usamos tu correo para enviarte tu diagnóstico.">Your email is used to send your audit.</p>
     </div>
     <input type="text" id="f-company" name="company" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
     <p class="error-msg" id="err-step3" data-en="Please enter a valid email address." data-es="Ingresa un correo electrónico válido.">Please enter a valid email address.</p>
@@ -1093,10 +1130,10 @@
   <h2 data-en="Building Your Audit" data-es="Creando tu diagnóstico">Building Your Audit</h2>
   <p data-en="Analyzing your profile and readiness score..." data-es="Analizando tu perfil y nivel de preparación...">Analyzing your profile and readiness score...</p>
   <div class="loading-steps">
-    <div class="loading-step" id="ls1" data-en="⚡ Scoring your five dimensions" data-es="⚡ Calculando tus cinco dimensiones">⚡ Scoring your five dimensions</div>
-    <div class="loading-step" id="ls2" data-en="🎯 Matching you to your best business track" data-es="🎯 Identificando tu mejor ruta de negocio">🎯 Matching you to your best business track</div>
-    <div class="loading-step" id="ls3" data-en="🧠 Generating your personalized audit" data-es="🧠 Generando tu diagnóstico personalizado">🧠 Generating your personalized audit</div>
-    <div class="loading-step" id="ls4" data-en="📧 Sending your report" data-es="📧 Enviando tu reporte">📧 Sending your report</div>
+    <div class="loading-step" id="ls1" data-en="Scoring your five dimensions" data-es="Calculando tus cinco dimensiones">Scoring your five dimensions</div>
+    <div class="loading-step" id="ls2" data-en="Matching you to your best business track" data-es="Identificando tu mejor ruta de negocio">Matching you to your best business track</div>
+    <div class="loading-step" id="ls3" data-en="Generating your personalized audit" data-es="Generando tu diagnóstico personalizado">Generating your personalized audit</div>
+    <div class="loading-step" id="ls4" data-en="Preparing your private preview" data-es="Preparando tu vista previa">Preparing your private preview</div>
   </div>
 </div>
 
@@ -1120,7 +1157,7 @@
 
   <!-- Email Sent Banner -->
   <div class="email-sent-banner">
-    <div class="email-sent-icon" id="res-email-icon">✅</div>
+    <div class="email-sent-icon" id="res-email-icon"></div>
     <div class="email-sent-text">
       <strong id="res-email-status" data-en="Full audit sent to your inbox" data-es="Diagnóstico completo enviado a tu correo">Full audit sent to your inbox</strong>
       <span id="res-email-show">Check your email for your detailed report and next steps.</span>
@@ -1130,12 +1167,15 @@
   <!-- Personal follow-up video for completed audits -->
   <div class="welcome-video-section">
     <div class="welcome-video-label" data-en="A personal message for you" data-es="Un mensaje personal para ti">A personal message for you</div>
-    <div class="welcome-video-embed" style="position:relative;padding-bottom:56.25%;border-radius:12px;overflow:hidden;border:1px solid #2a2a2a;">
+    <div class="welcome-video-embed video-wrapper" aria-busy="true" style="position:relative;padding-bottom:56.25%;border-radius:12px;overflow:hidden;border:1px solid #2a2a2a;">
       <iframe
+        title="Your personalized follow-up from Athletes of Life"
         data-src="https://www.loom.com/embed/0dfd3c90d188413abe9851afba607c5a?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
         style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
         allowfullscreen
-        loading="lazy">
+        allow="autoplay; fullscreen"
+        loading="lazy"
+        referrerpolicy="origin">
       </iframe>
     </div>
   </div>
@@ -1143,6 +1183,7 @@
   <!-- AI Audit Text -->
   <div class="audit-card">
     <div class="audit-card-label" data-en="Your Personalized Audit" data-es="Tu diagnóstico personalizado">Your Personalized Audit</div>
+    <p id="res-generation-status" role="status" style="color:var(--gold);font-size:13px;line-height:1.6"></p>
     <div class="audit-text" id="res-audit-text">
       <p>Generating your audit...</p>
     </div>
@@ -1196,7 +1237,6 @@
     <h3 data-en="Ready to Run Your Playbook?" data-es="¿Listo para ejecutar tu playbook?">Ready to Run Your Playbook?</h3>
     <p data-en="Start with the Foundation — it is free. Or jump straight into Pro Playbook and put your audit into action this week." data-es="Empieza con Foundation — es gratis. O entra directamente a Pro Playbook y convierte tu diagnóstico en acción esta semana.">Start with the Foundation — it is free. Or jump straight into Pro Playbook and put your audit into action this week.</p>
     <a href="https://calendly.com/admin-peptbiohacking/athletes-of-life-strategy-call" target="_blank" class="btn-cta" data-en="Book a Free Strategy Call with Anthony" data-es="Reserva una llamada estratégica gratis con Anthony">Book a Free Strategy Call with Anthony</a>
-    <a href="https://calendly.com/admin-peptbiohacking/athletes-of-life-strategy-call" target="_blank" class="btn-cta-secondary" data-en="Or start with Foundation (free) →" data-es="O empieza con Foundation (gratis) →">Or start with Foundation (free) →</a>
   </div>
 
 </div><!-- /screen-results -->
@@ -1207,7 +1247,7 @@
 ═══════════════════════════════════ -->
 <div id="screen-parent" class="screen">
   <div class="screen-inner">
-    <div class="subpath-badge">👪 Sports Parent Path</div>
+    <div class="subpath-badge">Sports Parent Path</div>
     <h2>Tell us about your athlete.</h2>
     <p class="screen-sub">Six questions. We send you a personalized fit report in minutes.</p>
 
@@ -1268,7 +1308,7 @@
 ═══════════════════════════════════ -->
 <div id="screen-nil" class="screen">
   <div class="screen-inner">
-    <div class="subpath-badge">🚀 NIL Athlete · Done For You</div>
+    <div class="subpath-badge">NIL Athlete · Done For You</div>
     <h2>We build it. You play.</h2>
     <p class="screen-sub">Tell us your situation. Anthony reviews every application and sends a strategy breakdown within 48 hours.</p>
 
@@ -1331,12 +1371,12 @@
 ═══════════════════════════════════ -->
 <div id="screen-parent-result" class="screen">
   <div class="result-sent">
-    <div class="result-sent-icon">📬</div>
-    <h2>Your Fit Report Is On Its Way</h2>
-    <p>We analyzed your athlete's situation and sent a personalized report to:</p>
+    <div class="result-sent-icon"><svg class="aol-line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg></div>
+    <h2>Your parent welcome email is on its way</h2>
+    <p>Confirmation email sent to:</p>
     <div class="result-email-show" id="parent-email-show">—</div>
-    <p style="margin-bottom:32px;font-size:14px;color:#666;">Check your inbox (and spam folder if needed). Anthony reviews every report personally.</p>
-    <a href="https://calendly.com/admin-peptbiohacking/athletes-of-life-strategy-call" target="_blank" class="btn-cta">Talk to Anthony — Free 20 Min</a>
+    <p style="margin-bottom:32px;font-size:14px;color:#666;">Your welcome email summarizes your answers. Book a strategy call to discuss next steps.</p>
+    <a href="https://calendly.com/admin-peptbiohacking/athletes-of-life-strategy-call" target="_blank" class="btn-cta">Talk to Anthony — Free 30 Min</a>
   </div>
 </div>
 
@@ -1346,11 +1386,11 @@
 ═══════════════════════════════════ -->
 <div id="screen-nil-result" class="screen">
   <div class="result-sent">
-    <div class="result-sent-icon">🚀</div>
-    <h2>Your Strategy Is Being Built</h2>
-    <p>Anthony personally reviews every application. Your strategy breakdown goes to:</p>
+    <div class="result-sent-icon"><svg class="aol-line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg></div>
+    <h2>Your application confirmation is on its way</h2>
+    <p>Confirmation email sent to:</p>
     <div class="result-email-show" id="nil-email-show">—</div>
-    <p style="margin-bottom:32px;font-size:14px;color:#666;">Expect a response within 48 hours. In the meantime, book a call to accelerate.</p>
+    <p style="margin-bottom:32px;font-size:14px;color:#666;">Your application summary has been emailed. Use the call link to explore your next step.</p>
     <a href="https://calendly.com/admin-peptbiohacking/athletes-of-life-strategy-call" target="_blank" class="btn-cta">Book Your Strategy Call with Anthony</a>
   </div>
 </div>
@@ -1508,6 +1548,9 @@ function submitAudit() {
   const bestTrack = getBestTrack(state.scores);
 
   const payload = {
+    goals: document.getElementById('f-goals').value.trim(),
+    obstacle: document.getElementById('f-obstacle').value.trim(),
+    success90: document.getElementById('f-success90').value.trim(),
     name: state.name,
     sport: state.sport,
     income: state.income,
@@ -1532,11 +1575,14 @@ function submitAudit() {
     });
   })
   .then(function(data) {
+    if (!data.generatedByAi || !data.audit) throw new Error('AI audit unavailable');
     showResults(data, payload);
   })
   .catch(function(err) {
     console.error('Audit error:', err);
-    showResults({ audit: generateFallbackAudit(payload), emailSent: false }, payload);
+    go('step3');
+    document.getElementById('err-api').textContent = state.language === 'es' ? 'No se pudo generar tu diagnóstico con IA. Tus respuestas siguen aquí. Intenta nuevamente.' : 'Your AI audit could not be generated. Your answers are still here. Please try again.';
+    document.getElementById('err-api').style.display = 'block';
   });
 }
 
@@ -1599,8 +1645,8 @@ function getReadinessLabel(score, language) {
 //  SHOW RESULTS
 // ═══════════════════════════════════════════════════════
 function showResults(data, payload) {
-  const total = payload.totalScore;
-  const track = payload.bestTrack;
+  const total = data && Number.isInteger(data.totalScore) ? data.totalScore : payload.totalScore;
+  const track = data && data.bestTrack ? data.bestTrack : payload.bestTrack;
   const language = payload.language === 'es' ? 'es' : 'en';
   const copy = locale[language];
   const readiness = getReadinessLabel(total, language);
@@ -1615,9 +1661,13 @@ function showResults(data, payload) {
   document.getElementById('res-track-desc').textContent = trackCopy[1];
 
   var emailSent = data && data.emailSent === true;
-  document.getElementById('res-email-icon').textContent = emailSent ? '✅' : '⚠️';
-  document.getElementById('res-email-status').textContent = emailSent ? copy.sent : copy.notSent;
-  document.getElementById('res-email-show').textContent = emailSent ? copy.sentTo + payload.email : copy.notSentDetail;
+  document.getElementById('res-email-icon').textContent = emailSent ? 'Sent' : 'Pending';
+  document.getElementById('res-email-status').textContent = data.sandbox ? (language === 'es' ? 'Sandbox: no se enviaron correos' : 'Sandbox: no emails sent') : emailSent ? copy.sent : copy.notSent;
+  document.getElementById('res-email-show').textContent = data.sandbox ? (language === 'es' ? 'Vista previa privada del diagnóstico.' : 'Private audit preview only.') : emailSent ? copy.sentTo + payload.email : copy.notSentDetail;
+
+  document.getElementById('res-generation-status').textContent = data && data.generatedByAi === true
+    ? (language === 'es' ? 'Diagnóstico personalizado generado con IA a partir de tus respuestas.' : 'Personalized AI audit generated from your answers.')
+    : (language === 'es' ? 'La generación con IA no está disponible. Este es un resumen básico de tus puntuaciones; intenta nuevamente para obtener tu diagnóstico personalizado.' : 'AI generation is unavailable. This is a basic summary of your scores; try again for your personalized audit.');
 
   // Audit text
   var auditContent = cleanAuditText((data && data.audit) ? data.audit : generateFallbackAudit(payload));
@@ -1727,18 +1777,7 @@ function submitParent() {
   document.getElementById('parent-email-show').textContent = email;
 
   // Fire and forget to function
-  fetch('/.netlify/functions/send-audit', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      type: 'parent',
-      name: name, email: email, sport: sport,
-      age: age, goal: goal, social: social,
-      notifyEmail: 'a.lever@me.com'
-    })
-  }).catch(function() {});
-
-  go('parent-result');
+  fetch('/.netlify/functions/send-audit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'parent',name:name,email:email,sport:sport,age:age,goal:goal,social:social})}).then(async function(response){var data=await response.json();if(!response.ok||!data.emailSent)throw new Error('Delivery unconfirmed');go('parent-result');}).catch(function(){var error=document.getElementById('err-parent');error.textContent='Delivery could not be confirmed. Your answers are still here; please retry.';error.style.display='block';});
 }
 
 // ═══════════════════════════════════════════════════════
@@ -1759,20 +1798,20 @@ function submitNil() {
   document.getElementById('err-nil').style.display = 'none';
   document.getElementById('nil-email-show').textContent = email;
 
-  fetch('/.netlify/functions/send-audit', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      type: 'nil',
-      name: name, email: email, sport: sport,
-      income: income, block: block, outcome: outcome,
-      notifyEmail: 'a.lever@me.com'
-    })
-  }).catch(function() {});
-
-  go('nil-result');
+  fetch('/.netlify/functions/send-audit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'nil',name:name,email:email,sport:sport,income:income,block:block,outcome:outcome})}).then(async function(response){var data=await response.json();if(!response.ok||!data.emailSent)throw new Error('Delivery unconfirmed');go('nil-result');}).catch(function(){var error=document.getElementById('err-nil');error.textContent='Delivery could not be confirmed. Your answers are still here; please retry.';error.style.display='block';});
 }
+
+// Keep the player frame informative while Loom initializes over the network.
+document.querySelectorAll('.video-wrapper iframe').forEach(function(frame) {
+  frame.addEventListener('load', function() {
+    var wrapper = frame.closest('.video-wrapper');
+    if (wrapper) {
+      wrapper.classList.add('video-loaded');
+      wrapper.setAttribute('aria-busy', 'false');
+    }
+  });
+});
 </script>
 
-</body>
+<script src="/assistant.js"></script></body>
 </html>

@@ -1,0 +1,26 @@
+{
+  "athletes": {
+    "url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-video/5B6G3vx06rLckNJy6v8K/cgt-20261114041741-wocvs_1794601119267_a8fe2d28.mp4",
+    "poster": "https://cdn.openart.ai/openart/thumbnail/production/2026-11/create-video/5B6G3vx06rLckNJy6v8K/cgt-20261114041741-wocvs_1794601119267_a8fe2d28_1794601125677_b41b834c.webp"
+  },
+  "trades": {
+    "url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-video/5B6G3vx06rLckNJy6v8K/cgt-20261114041742-whdhk_1794601117364_30f7a48e.mp4",
+    "poster": "https://cdn.openart.ai/openart/thumbnail/production/2026-11/create-video/5B6G3vx06rLckNJy6v8K/cgt-20261114041742-whdhk_1794601117364_30f7a48e_1794601122928_b3dbc23e.webp"
+  },
+  "everyday": {
+    "url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-video/5B6G3vx06rLckNJy6v8K/cgt-20261114041743-9zcd6_1794601120489_c37f5fdc.mp4",
+    "poster": "https://cdn.openart.ai/openart/thumbnail/production/2026-11/create-video/5B6G3vx06rLckNJy6v8K/cgt-20261114041743-9zcd6_1794601120489_c37f5fdc_1794601126182_5cbad170.webp"
+  },
+  "golden-age": {
+    "url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-video/5B6G3vx06rLckNJy6v8K/cgt-20261114041747-9ahel_1794601125370_8d41bb54.mp4",
+    "poster": "https://cdn.openart.ai/openart/thumbnail/production/2026-11/create-video/5B6G3vx06rLckNJy6v8K/cgt-20261114041747-9ahel_1794601125370_8d41bb54_1794601131959_9e609c5f.webp"
+  },
+  "coaches": {
+    "url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-video/5B6G3vx06rLckNJy6v8K/cgt-20261114051601-0st95_1794604619716_ecde822f.mp4",
+    "poster": "https://cdn.openart.ai/openart/thumbnail/production/2026-11/create-video/5B6G3vx06rLckNJy6v8K/cgt-20261114051601-0st95_1794604619716_ecde822f_1794604624900_83a829fc.webp"
+  },
+  "sports-parents": {
+    "url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-video/5B6G3vx06rLckNJy6v8K/cgt-20261114051606-y8uct_1794604620596_66b28885.mp4",
+    "poster": "https://cdn.openart.ai/openart/thumbnail/production/2026-11/create-video/5B6G3vx06rLckNJy6v8K/cgt-20261114051606-y8uct_1794604620596_66b28885_1794604625565_0313f22d.webp"
+  }
+}
