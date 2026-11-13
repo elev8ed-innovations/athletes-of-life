@@ -10,3 +10,6 @@
 
 [functions."send-audit"]
   timeout = 26
+
+[functions."onboarding-assistant"]
+  timeout = 26
